@@ -24,9 +24,8 @@ int main() {
 	std::clock_t start = clock();
 	unsigned long long int N = 600851475143;
 	largest_factor(N);
-	std::clock_t end = clock();
 
-	printf("Execution time == [%.2f] seconds\n", (end - start) / CLOCKS_PER_SEC);
+	printf("Execution time == [%.2f] seconds\n", (clock() - static_cast<double>(start)) / CLOCKS_PER_SEC);
 
 	return 0;
 }

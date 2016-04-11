@@ -32,9 +32,8 @@ void find_largest_product_palindrome() {
 int main() {
 	std::clock_t start = clock();
 	find_largest_product_palindrome();
-	std::clock_t end = clock();
 
-	printf("Exection time == [%.2f] seconds\n", (end - start) / CLOCKS_PER_SEC);
+	printf("Exection time == [%.2f] seconds\n", (clock() - static_cast<double>(start)) / CLOCKS_PER_SEC);
 
 	return 0;
 }
