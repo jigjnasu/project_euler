@@ -1,10 +1,11 @@
 #include <cstdio>
 #include <string>
 #include <fstream>
+#include <cstdlib>
 
 void series_product(const std::string& file_path) {
 	std::string number;
-	std::ifstream ifs(file_path);
+	std::ifstream ifs(file_path.c_str());
 	if (ifs.is_open()) {
 		std::string line;
 		while (std::getline(ifs, line))
@@ -31,7 +32,7 @@ void series_product(const std::string& file_path) {
 }
 
 int main() {
-	series_product("C:/Rocky/Development/data/data.txt");
+	series_product("largest_product.txt");
 
 	return 0;
 }
