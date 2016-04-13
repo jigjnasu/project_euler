@@ -32,7 +32,7 @@ void series_product(const std::string& file_path) {
 }
 
 int main() {
-	series_product("largest_product.txt");
+	series_product("data/largest_product.txt");
 
 	return 0;
 }

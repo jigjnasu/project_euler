@@ -3,11 +3,12 @@
 #include <string>
 #include <ctime>
 #include <vector>
+#include <cstdlib>
 
 int largest_product(const std::string& file) {
   std::vector<std::vector<int> > grid;
   int product = 0;
-  std::fstream ifs(file);
+  std::fstream ifs(file.c_str());
   if (ifs.is_open()) {
     for (int i = 0; i < 20; ++i) {
       std::string line;
@@ -16,9 +17,11 @@ int largest_product(const std::string& file) {
       std::vector<int> row;
       std::size_t pos = 0;
       for (int j = 0; j < 19; ++j) {
-	std::size_t next_pos = line.find(" ", pos + 1);
-	row.push_back(std::atoi(line.substr(pos, next_pos).c_str()));
-	pos = next_pos;
+		  std::size_t next_pos = line.find(" ", pos + 1);
+		  if (next_pos != std::string::npos) {
+			  row.push_back(std::atoi(line.substr(pos, next_pos).c_str()));
+			  pos = next_pos;
+		  }
       }
       row.push_back(std::atoi(line.substr(pos + 1, line.size() - 1).c_str()));
 
@@ -55,7 +58,7 @@ int largest_product(const std::string& file) {
 
 int main() {
   std::clock_t start = clock();
-  printf("largest product == [%d]\n", largest_product("D:/rocky/development/data/data.txt"));
+  printf("largest product == [%d]\n", largest_product("data/large_sum.txt"));
   printf("Execution time == [%.2f]\n", (clock() - static_cast<double>(start)) / CLOCKS_PER_SEC);
 
   return 0;
