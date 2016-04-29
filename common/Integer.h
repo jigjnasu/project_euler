@@ -1,6 +1,8 @@
+
 #ifndef PROJECT_EULER_COMMON_INTEGER_H_
 #define PROJECT_EULER_COMMON_INTEGER_H_
 
+#include <cstdio>
 #include <iostream>
 #include <vector>
 #include <string>
@@ -16,17 +18,23 @@ public:
 	Integer(const Integer& value);
 	Integer& operator = (const Integer& value);
 
-	Integer operator + (const Integer& rhs);
-	Integer operator * (const Integer& rhs);
+	Integer operator + (const Integer& rhs) const;
+	Integer operator * (const Integer& rhs) const;
 
-	Integer operator + (const T& rhs);
-	Integer operator * (const T& rhs);
+	Integer operator + (const T& rhs) const;
+	Integer operator * (const T& rhs) const;
 
-	Integer operator + (const std::vector<T>& rhs);
-	Integer operator * (const std::vector<T>& rhs);
+	Integer operator + (const std::vector<T>& rhs) const;
+	Integer operator * (const std::vector<T>& rhs) const;
 
-	Integer operator + (const std::string& rhs);
-	Integer operator * (const std::string& rhs);
+	Integer operator + (const std::string& rhs) const;
+	Integer operator * (const std::string& rhs) const;
+
+	void operator += (const Integer& rhs);
+	void operator *= (const Integer& rhs);
+
+	void operator += (const T& rhs);
+	void operator *= (const T& rhs);
 
 	std::vector<T> GetData() const;
 	void Print() const;
@@ -66,7 +74,7 @@ Integer<T>& Integer<T>::operator = (const Integer& value) {
 }
 
 template <typename T>
-Integer<T> Integer<T>::operator + (const Integer& rhs) {
+Integer<T> Integer<T>::operator + (const Integer& rhs) const {
 	Integer<T> temp;
 	std::size_t left_iterator = 0;
 	std::size_t right_iterator = 0;
@@ -114,11 +122,32 @@ Integer<T> Integer<T>::operator + (const Integer& rhs) {
 }
 
 template <typename T>
-Integer<T> Integer<T>::operator * (const Integer& rhs) {
+Integer<T> Integer<T>::operator * (const Integer& rhs) const {
+	Integer<T> temp;
+	T carry = rhs;
+	int iter = 0;
+
+	while (iter < m_data.size()) {
+		const T sum = m_data[iter] * carry;
+		if (sum > 9) {
+			temp.m_data.push_back(sum % 10);
+			carry = sum / 10;
+		} else {
+			temp.m_data.push_back(sum);
+			carry = 0;
+		}
+	}
+
+	while (carry) {
+		temp.m_data.push_back(carry % 10);
+		carry /= 10;
+	}
+
+	return temp;	
 }
 
 template <typename T>
-Integer<T> Integer<T>::operator + (const T& rhs) {
+Integer<T> Integer<T>::operator + (const T& rhs) const {
 	Integer<T> temp;
 	T carry = rhs;
 	int iter = 0;
@@ -143,7 +172,7 @@ Integer<T> Integer<T>::operator + (const T& rhs) {
 }
 
 template <typename T>
-Integer<T> Integer<T>::operator * (const T& rhs) {
+Integer<T> Integer<T>::operator * (const T& rhs) const {
 	Integer<T> temp;
 	T carry = 0;
 
@@ -168,7 +197,7 @@ Integer<T> Integer<T>::operator * (const T& rhs) {
 }
 
 template <typename T>
-Integer<T> Integer<T>::operator + (const std::vector<T>& rhs) {
+Integer<T> Integer<T>::operator + (const std::vector<T>& rhs) const {
 	Integer<T> A;
 	for (std::size_t i = 0; i < rhs.size(); ++i)
 		A.m_data.push_back(rhs[i]);
@@ -177,11 +206,11 @@ Integer<T> Integer<T>::operator + (const std::vector<T>& rhs) {
 }
 
 template <typename T>
-Integer<T> Integer<T>::operator * (const std::vector<T>& rhs) {
+Integer<T> Integer<T>::operator * (const std::vector<T>& rhs) const {
 }
 
 template <typename T>
-Integer<T> Integer<T>::operator + (const std::string& rhs) {
+Integer<T> Integer<T>::operator + (const std::string& rhs) const {
 	Integer<T> A;
 	for (std::size_t i = 0; i < rhs.size(); ++i) {
 		char temp[2] = {0};
@@ -193,7 +222,43 @@ Integer<T> Integer<T>::operator + (const std::string& rhs) {
 }
 
 template <typename T>
-Integer<T> Integer<T>::operator * (const std::string& rhs) {
+Integer<T> Integer<T>::operator * (const std::string& rhs) const {
+}
+
+template <typename T>
+void Integer<T>::operator += (const Integer& rhs) {
+	
+}
+
+template <typename T>
+void Integer<T>::operator *= (const Integer& rhs) {
+}
+
+template <typename T>
+void Integer<T>::operator += (const T& rhs) {
+	
+}
+
+template <typename T>
+void Integer<T>::operator *= (const T& rhs) {
+	T carry = 0;
+
+	for (std::size_t i = 0; i < m_data.size(); ++i) {
+		const T sum = (m_data[i] * rhs) + carry;
+
+		if (sum > 9) {
+			m_data[i] = sum % 10;
+			carry = sum / 10;
+		} else {
+			m_data[i] = sum;
+			carry = 0;
+		}
+	}
+
+	while (carry) {
+		m_data.push_back(carry % 10);
+		carry /= 10;
+	}	
 }
 
 template <typename T>
