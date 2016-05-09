@@ -13,17 +13,20 @@ namespace PROJECT_EULER {
 			~Common();
 
 			void PrintVector(const std::vector<T>& V);
-		}	
+		};
 	};
 };
 
 namespace PC = PROJECT_EULER::COMMON;
 
-PC::Common::Common() {}
+template <typename T>
+PC::Common<T>::Common() {}
 
-PC::Common::~Common() {}
+template <typename T>
+PC::Common<T>::~Common() {}
 
-void PC::Common::PrintVector(const std::vector<T>& V) {
+template <typename T>
+void PC::Common<T>::PrintVector(const std::vector<T>& V) {
 	for (std::size_t i = 0; i < V.size(); ++i)
 		std::cout << V[i] << " ";
 	std::cout << std::endl;
