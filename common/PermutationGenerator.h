@@ -17,10 +17,12 @@ namespace PROJECT_EULER {
 
 			void Generate();
 			void Result(std::vector<T>& numbers);
+			void Result(std::vector<std::string>& numbers);
 
 		private:
 			std::vector<T> m_data;
 			std::vector<T> m_result;
+			std::vector<std::string> m_string_result;
 			
 			void m_swap(T& A, T& B);
 			void m_generate(const int& N);
@@ -67,6 +69,11 @@ void PC::PermutationGenerator<T>::Result(std::vector<T>& numbers) {
 }
 
 template <typename T>
+void PC::PermutationGenerator<T>::Result(std::vector<std::string>& numbers) {
+	numbers = m_string_result;
+}
+
+template <typename T>
 void PC::PermutationGenerator<T>::m_swap(T& A, T& B) {
 	T t = A;
 	A = B;
@@ -91,6 +98,8 @@ void PC::PermutationGenerator<T>::m_add_to_result() {
 	for (std::size_t i = 0; i < m_data.size(); ++i)
 		number += m_data[i] + '0';
 
+	m_string_result.push_back(number);
 	m_result.push_back(std::atoi(number.c_str()));
 }
+
 #endif // PROJECT_EULER_COMMON_PERMUTATION_GENERATOR_H_
