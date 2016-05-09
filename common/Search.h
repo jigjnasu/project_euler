@@ -1,6 +1,7 @@
 #ifndef PROJECT_EULER_COMMON_SEARCH_H_
 #define PROJECT_EULER_COMMON_SEARCH_H_
 
+#include <cstdio>
 #include <vector>
 
 namespace PROJECT_EULER {
@@ -27,19 +28,19 @@ PC::Search<T>::~Search() {}
 template <typename T>
 bool PC::Search<T>::search(const std::vector<T>& V, const int& N) {
 	int low = 0;
-	int hight = V.size() - 1;
+	int high = V.size() - 1;
 	while (1) {
-		if (low == high) {
-			if (V[low] == N)
-				return true;
-			else
-				return false;
+		const int mid = (low + high) >> 1;
+		if (V[mid] == N) {
+			return true;
+		} else if (low == high) {
+			return false;
 		} else {
-			const int mid = (low + high) / 2;
 			if (N < V[mid])
 				high = mid;
-			if (N > V[mid])
-				low = mid;
+			else
+				low = mid + 1;
+		}
 	}
 }
 
