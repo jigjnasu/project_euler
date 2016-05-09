@@ -12,7 +12,7 @@ bool is_prime(const unsigned long long int& N) {
 
 int main() {
 	std::clock_t start = clock();
-	Integer<int> sum(0);
+	PROJECT_EULER::COMMON::Integer<int> sum(0);
 	for (int i = 2; i < 2000000; ++i) {
 		if (is_prime(i)) {
 			sum += i;

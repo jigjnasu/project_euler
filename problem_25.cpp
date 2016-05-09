@@ -2,10 +2,12 @@
 #include <cstdio>
 #include <ctime>
 
+namespace PC = PROJECT_EULER::COMMON;
+
 void fibonacci() {
-	Integer<int> A(1);
-	Integer<int> B(1);
-	Integer<int> C = A + B;
+	PC::Integer<int> A(1);
+	PC::Integer<int> B(1);
+	PC::Integer<int> C = A + B;
 	int index = 3;
 
 	while (C.GetData().size() < 1000) {
