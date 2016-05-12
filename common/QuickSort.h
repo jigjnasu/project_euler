@@ -1,3 +1,10 @@
+/*
+  This is solution Quick sort algorithm, based on the Lumuto algorithm.
+  This algroithm is also using random piviot selection to get almost perferct nlog2n complexity.
+  Author : Rakesh Kumar @ cpp.rakesh@gmail.com
+  Date : May 12th, 2016
+ */
+
 #ifndef PROJECT_EULER_COMMON_QUICK_SORT_H_
 #define PROJECT_EULER_COMMON_QUICK_SORT_H_
 
