@@ -1,3 +1,9 @@
+/*
+  This is solution for problem 29 (Distinct Powers) from ProjectEuler.net.
+  Author : Rakesh Kumar @ cpp.rakesh@gmail.com
+  Date : May 12th, 2016
+ */
+
 #ifndef PROJECT_EULER_COMMON_INTEGER_H_
 #define PROJECT_EULER_COMMON_INTEGER_H_
 
@@ -38,7 +44,8 @@ namespace PROJECT_EULER {
 			void operator *= (const T& rhs);
 			
 			std::vector<T> GetData() const;
-			void Print() const;
+			std::string GetStringData() const;
+			void Print() const; 
 			
 		private:
 			std::vector<int> m_data;
@@ -286,6 +293,14 @@ void PC::Integer<T>::operator *= (const T& rhs) {
 template <typename T>
 std::vector<T> PC::Integer<T>::GetData() const {
 	return m_data;
+}
+
+template <typename T>
+std::string PC::Integer<T>::GetStringData() const {
+	std::string number;
+	for (int i = m_data.size() - 1; i >= 0; --i)
+		number.push_back(m_data[i] + '0');
+	return number;
 }
 
 template <typename T>
