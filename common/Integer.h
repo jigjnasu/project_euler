@@ -1,5 +1,6 @@
 /*
-  This is solution for problem 29 (Distinct Powers) from ProjectEuler.net.
+  This is template class for containing big integer data, which we can't hold
+  on normal 32 bit or 64 bit integers.
   Author : Rakesh Kumar @ cpp.rakesh@gmail.com
   Date : May 12th, 2016
  */
