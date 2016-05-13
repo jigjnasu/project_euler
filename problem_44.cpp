@@ -1,7 +1,7 @@
 /*
-  This is solution for problem 29 (Distinct Powers) from ProjectEuler.net.
+  This is solution for problem 44 (Pentagon numbers) from ProjectEuler.net.
   Author : Rakesh Kumar @ cpp.rakesh@gmail.com
-  Date : May 12th, 2016
+  Date : May 14th, 2016
  */
 
 #include <cstdio>
