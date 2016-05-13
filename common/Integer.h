@@ -240,7 +240,50 @@ PC::Integer<T> PC::Integer<T>::operator * (const std::string& rhs) const {
 
 template <typename T>
 void PC::Integer<T>::operator += (const Integer& rhs) {
+	int rhs_iter = 0;
+	int lhs_iter = 0;
+	T carry = 0;
 	
+	while (lhs_iter < m_data.size() && rhs_iter < rhs.m_data.size()) {
+		const T sum = m_data[lhs_iter] + rhs.m_data[rhs_iter] + carry;
+
+		if (sum < 9) {
+			m_data[lhs_iter] = sum;
+			carry = 0;
+		} else {
+			m_data[lhs_iter] = sum % 10;
+			carry = sum / 10;
+		}
+
+		++lhs_iter;
+		++rhs_iter;
+	}
+
+	while (lhs_iter < m_data.size()) {
+		const T sum = m_data[lhs_iter] + carry;
+		if (sum < 9) {
+			m_data[lhs_iter] = sum;
+			carry = 0;
+		} else {
+			m_data[lhs_iter] = sum % 10;
+			carry = sum / 10;
+		}
+
+		++lhs_iter;
+	}
+
+	while (rhs_iter < rhs.m_data.size()) {
+		const T sum = rhs.m_data[rhs_iter] + carry;
+		if (sum < 9) {
+			m_data.push_back(sum);
+			carry = 0;
+		} else {
+			m_data.push_back(sum % 10);
+			carry = sum / 10;
+		}
+
+		++rhs_iter;
+	}
 }
 
 template <typename T>
