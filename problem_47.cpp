@@ -11,7 +11,7 @@
 #include <algorithm>
 
 bool is_prime(const int& N) {
-	if (N <= 2)
+	if (N == 2)
 		return true;
 	for (int i = 2; i <= std::sqrt(N); ++i)
 		if (N % i == 0)
@@ -20,17 +20,19 @@ bool is_prime(const int& N) {
 }
 
 void get_factors(const int& N, std::vector<int>& factors,  const std::vector<int>& prime_numbers) {
-	int number = N;
-	int prime_iter = 0;
-	while (number != 1 && prime_numbers[prime_iter] <= N / 2) {
-		int factor = 1;
-		while (number % prime_numbers[prime_iter] == 0) {
-			factor *= prime_numbers[prime_iter];
-			number /= prime_numbers[prime_iter];
+	if (prime_numbers.size()) {
+		int number = N;
+		int prime_iter = 0;
+		while (number != 1 && prime_numbers[prime_iter] <= N / 2) {
+			int factor = 1;
+			while (number % prime_numbers[prime_iter] == 0) {
+				factor *= prime_numbers[prime_iter];
+				number /= prime_numbers[prime_iter];
+			}
+			if (factor != 1)
+				factors.push_back(factor);
+			++prime_iter;
 		}
-		if (factor != 1)
-			factors.push_back(factor);
-		++prime_iter;
 	}
 }
 
@@ -49,9 +51,9 @@ bool is_distinct_factor(const std::vector<int>& factors) {
 }
 
 void print(const int& number, const std::vector<int>& factors) {
-	printf("[%d] == ", number);
+	printf("[%d] ==== ", number);
 	for (std::size_t i = 0; i < factors.size(); ++i)
-		printf("%d ", factors[i]);
+		printf("[%8d] ", factors[i]);
 	printf("\n");
 }
 
