@@ -288,6 +288,22 @@ void PC::Integer<T>::operator += (const Integer& rhs) {
 
 template <typename T>
 void PC::Integer<T>::operator *= (const Integer& rhs) {
+	T carry = 0;
+	for (std::size_t i = 0; i < m_data.size(); ++i) {
+		const T sum = (m_data[i] * rhs) + carry;
+		if (sum > 9) {
+			m_data[i] = sum % 10;
+			carry = sum / 10;
+		} else {
+			m_data[i] = sum;
+			carry = 0;
+		}
+	}
+
+	while (carry) {
+		m_data.push_back(carry % 10);
+		carry /= 10;
+	}
 }
 
 template <typename T>
