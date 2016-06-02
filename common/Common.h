@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <iostream>
+#include <cmath>
 
 namespace PROJECT_EULER {
 	namespace COMMON {
@@ -13,6 +14,7 @@ namespace PROJECT_EULER {
 			~Common();
 
 			void PrintVector(const std::vector<T>& V);
+			bool IsPrime(const T& number);
 		};
 	};
 };
@@ -30,6 +32,18 @@ void PC::Common<T>::PrintVector(const std::vector<T>& V) {
 	for (std::size_t i = 0; i < V.size(); ++i)
 		std::cout << V[i] << " ";
 	std::cout << std::endl;
+}
+
+template <typename T>
+bool PC::Common<T>::IsPrime(const T& number) {
+	if (number == 2)
+		return true;
+	
+	for (int i = 2; i <= std::sqrt(number); ++i)
+		if (number % i == 0)
+			return false;
+	
+	return true;
 }
 
 #endif // PROJECT_EULER_COMMON_INC_COMMON_H_
