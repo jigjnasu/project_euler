@@ -20,6 +20,8 @@ namespace PROJECT_EULER {
 			class Integer {
 		public:
 			Integer();
+			Integer(const std::string& N);
+			Integer(const std::vector<T>& N);
 			~Integer();
 			
 			Integer(T value);
@@ -43,6 +45,8 @@ namespace PROJECT_EULER {
 			
 			void operator += (const T& rhs);
 			void operator *= (const T& rhs);
+
+			bool operator == (const Integer& rhs);
 			
 			std::vector<T> GetData() const;
 			std::string GetStringData() const;
@@ -58,6 +62,17 @@ namespace PC = PROJECT_EULER::COMMON;
 		
 template <typename T>
 PC::Integer<T>::Integer() {}
+
+template <typename T>
+PC::Integer<T>::Integer(const std::string& N) {
+	for (std::size_t i = 0; i < N.size(); ++i)
+		m_data.push_back(N[i] - '0');
+}
+
+template <typename T>
+PC::Integer<T>::Integer(const std::vector<T>& N) {
+	m_data = N;
+}
 
 template <typename T>
 PC::Integer<T>::~Integer() {}
@@ -284,6 +299,11 @@ void PC::Integer<T>::operator += (const Integer& rhs) {
 
 		++rhs_iter;
 	}
+
+	while (carry) {
+		m_data.push_back(carry % 10);
+		carry /= 10;
+	}
 }
 
 template <typename T>
@@ -348,6 +368,18 @@ void PC::Integer<T>::operator *= (const T& rhs) {
 		m_data.push_back(carry % 10);
 		carry /= 10;
 	}	
+}
+
+template <typename T>
+bool PC::Integer<T>::operator == (const Integer& rhs) {
+	if (m_data.size() != rhs.m_data.size())
+		return false;
+
+	for (std::size_t i = 0; i < m_data.size(); ++i)
+		if (m_data[i] != rhs.m_data[i])
+			return false;
+	
+	return true;
 }
 
 template <typename T>
