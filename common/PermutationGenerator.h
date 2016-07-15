@@ -13,6 +13,7 @@ namespace PROJECT_EULER {
 			PermutationGenerator();
 			PermutationGenerator(const int& N, bool is_zero);
 			PermutationGenerator(const std::vector<T>& V);
+			PermutationGenerator(const std::string& data);
 			~PermutationGenerator();
 
 			void Generate();
@@ -53,6 +54,12 @@ PC::PermutationGenerator<T>::PermutationGenerator(const int& N, bool is_zero) {
 template <typename T>
 PC::PermutationGenerator<T>::PermutationGenerator(const std::vector<T>& V) {
 	m_data = V;
+}
+
+template <typename T>
+PC::PermutationGenerator<T>::PermutationGenerator(const std::string& data) {
+	for (std::size_t i = 0; i < data.size(); ++i)
+		m_data.push_back(data[i] - '0');	
 }
 
 template <typename T>

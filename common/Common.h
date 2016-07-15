@@ -4,6 +4,8 @@
 #include <vector>
 #include <iostream>
 #include <cmath>
+#include <string>
+#include <sstream>
 
 namespace PROJECT_EULER {
 	namespace COMMON {
@@ -15,6 +17,8 @@ namespace PROJECT_EULER {
 
 			void PrintVector(const std::vector<T>& V);
 			bool IsPrime(const T& number);
+			const std::string ToString(const T& number);
+			const T ToNumber(const std::string& number);
 		};
 	};
 };
@@ -44,6 +48,22 @@ bool PC::Common<T>::IsPrime(const T& number) {
 			return false;
 	
 	return true;
+}
+
+template <typename T>
+const std::string PC::Common<T>::ToString(const T& number) {
+	std::stringstream ss;
+	ss << number;
+	return ss.str();
+}
+
+template <typename T>
+const T PC::Common<T>::ToNumber(const std::string& number) {
+	std::stringstream ss;
+	ss << number;
+	T num = 0;
+	ss >> num;
+	return num;
 }
 
 #endif // PROJECT_EULER_COMMON_INC_COMMON_H_

@@ -47,7 +47,9 @@ namespace PROJECT_EULER {
 			void operator *= (const T& rhs);
 
 			bool operator == (const Integer& rhs);
-			
+
+			std::size_t Size() const;
+
 			std::vector<T> GetData() const;
 			std::string GetStringData() const;
 			void Print() const; 
@@ -380,6 +382,11 @@ bool PC::Integer<T>::operator == (const Integer& rhs) {
 			return false;
 	
 	return true;
+}
+
+template <typename T>
+std::size_t PC::Integer<T>::Size() const {
+	return m_data.size();
 }
 
 template <typename T>
