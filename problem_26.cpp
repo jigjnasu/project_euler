@@ -1,5 +1,5 @@
 /*
-  This is solution for problem 26 (Quadratic primes) from ProjectEuler.net.
+  This is solution for problem 26 (Reciprocal cycles) from ProjectEuler.net.
   Author : Rakesh Kumar @ cpp.rakesh@gmail.com
   Date : July 17th, 2016
  */
