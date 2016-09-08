@@ -232,7 +232,7 @@ void PC::Integer<T>::operator += (const Integer& rhs) {
 	
     while (lhs_iter < m_data.size() && rhs_iter < rhs.m_data.size()) {
         const T sum = m_data[lhs_iter] + rhs.m_data[rhs_iter] + carry;
-        m_data[lhs_iter] = sum;
+        m_data[lhs_iter] = sum % 10;
         carry = sum / 10;
 
         ++lhs_iter;
