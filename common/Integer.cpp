@@ -112,6 +112,37 @@ void Integer::operator += (const Integer& rhs) {
     }
 }
 
+void Integer::operator += (const std::string& rhs) {
+    std::size_t i = 0;
+    int j = rhs.size() - 1;
+    int carry = 0;
+
+    while (i < m_data.size() && j >= 0) {
+        const int sum = carry + (m_data[i] - '0' + rhs[j--] - '0');
+        m_data[i++] = (sum % 10) + '0';
+        carry = sum / 10;
+    }
+
+    while (i < m_data.size()) {
+        const int sum = carry + m_data[i] - '0';
+        m_data[i++] = (sum % 10) + '0';
+        carry = sum / 10;
+        if (carry == 0)
+            return;
+    }
+
+    while (j >= 0) {
+        const int sum = carry + (rhs[j--]) - '0';
+        m_data.push_back((sum % 10) + '0');
+        carry = sum / 10;
+    }
+
+    while (carry) {
+        m_data.push_back((carry % 10) + '0');
+        carry /= 10;
+    }
+}
+
 void Integer::operator += (const int& rhs) {
     int carry = rhs;
 

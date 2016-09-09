@@ -5,13 +5,12 @@
 #include <ctime>
 
 void large_sum(const std::string& file) {
-    PROJECT_EULER::COMMON::Integer<int> sum;
+    Integer sum(0);
     std::fstream ifs(file.c_str());
     if (ifs.is_open()) {
 	std::string line;
 	while (std::getline(ifs, line)) {
-	    std::reverse(line.begin(), line.end());
-	    sum = sum + line;
+	    sum += line;
 	}
 	sum.Print();
 	ifs.close();

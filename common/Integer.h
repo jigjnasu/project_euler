@@ -17,10 +17,6 @@ public:
     // Default constructor
     Integer();
 
-    // This constructor will take the input string as we see the
-    // number in 12345 order, because we need to add from the last
-    // number, we can save reverse, and when adding carry value it will be
-    // always at back, which will easily save the shift cost.
     Integer(const std::string& data);
 
     // This construction will take the input as std::vector<int> type.
@@ -42,7 +38,8 @@ public:
     Integer operator + (const int& rhs);
 
     void operator += (const Integer& rhs);
-    void operator += (const int& rhs);
+    void operator += (const std::string& rhs);
+    void operator += (const int& rhs);    
 
     void Print() const;
 
