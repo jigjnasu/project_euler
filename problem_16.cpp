@@ -5,7 +5,7 @@
 int main() {
     int N = 1000;
     std::clock_t start = clock();
-    PROJECT_EULER::COMMON::Integer<int> A(2);
+    Integer A(2);
     for (int i = 0; i < N - 1; ++i)
 	A = A * 2;
 

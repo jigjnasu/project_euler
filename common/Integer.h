@@ -14,16 +14,16 @@
 
 class Integer {
 public:
-    // Default constructor
+    // Default Initialization
     Integer();
 
+    // Initialize with std::string
     Integer(const std::string& data);
 
-    // This construction will take the input as std::vector<int> type.
-    // Normal way
+    // Initialization std::vector<int>
     Integer(const std::vector<int>& data);
 
-    // Normal Integer value intial
+    // Intitialization with int.
     Integer(int data);
 
     // Copy constructor
@@ -35,16 +35,28 @@ public:
     ~Integer();
 
     Integer operator + (const Integer& rhs);
+    Integer operator + (const std::string& rhs);
     Integer operator + (const int& rhs);
 
     void operator += (const Integer& rhs);
     void operator += (const std::string& rhs);
-    void operator += (const int& rhs);    
+    void operator += (const int& rhs);
+
+#if 0
+    Integer operator - (const Integer& rhs);
+    Integer operator - (const std::string& rhs);
+    Integer operator - (const int& rhs);
+
+    void operator -= (const Integer& rhs);
+    void operator -= (const std::string& rhs);
+    void operator -= (const int& rhs);
+#endif
 
     void Print() const;
 
 private:
-    std::string m_data;  
+    bool        m_sign;
+    std::string m_data;
 };
 
 #endif // ALGORITHMS_RECURRENCE_INTEGER_H_
