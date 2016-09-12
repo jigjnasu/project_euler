@@ -42,8 +42,8 @@ public:
     void operator += (const std::string& rhs);
     void operator += (const int& rhs);
 
-#if 0
     Integer operator - (const Integer& rhs);
+#if 0    
     Integer operator - (const std::string& rhs);
     Integer operator - (const int& rhs);
 
@@ -52,11 +52,14 @@ public:
     void operator -= (const int& rhs);
 #endif
 
+    std::size_t Size() const;
     void Print() const;
 
 private:
     bool        m_sign;
     std::string m_data;
+
+    void m_subtract(const std::string& A, const std::string& B, std::string& R);
 };
 
 #endif // ALGORITHMS_RECURRENCE_INTEGER_H_
