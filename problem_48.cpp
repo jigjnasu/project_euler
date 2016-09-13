@@ -8,19 +8,31 @@
 #include <cstdio>
 #include <ctime>
 
+Integer power(const int& x, const int& n) {
+    if (n == 1) {
+        return Integer(x);
+    } else {
+        if (n % 2 == 0) {
+            Integer value = power(x, n / 2);
+            return value * value;
+        } else {
+            Integer value = power(x, n / 2);
+            return value * value * x;
+        }
+    }
+}
 
 void self_powers() {
-    PROJECT_EULER::COMMON::Integer<int> power_sum(0);
+    Integer power_sum(0);
 
     for (int i = 1; i <= 1000; ++i) {
-	PROJECT_EULER::COMMON::Integer<int> number(1);
-	for (int j = 0; j < i; ++j) {
-	    number *= i;
-	}
+        Integer number = power(i, i);
 	power_sum += number;
     }
 
-    printf("Selft power sum == [%s]\n", power_sum.GetStringData().c_str());
+    printf("Self power sum is here ----> \n");
+    power_sum.Print();
+    printf("\n");
 }
 
 int main() {

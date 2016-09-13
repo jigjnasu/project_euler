@@ -8,31 +8,20 @@
 #include <cstdio>
 #include <ctime>
 
-namespace PC = PROJECT_EULER::COMMON;
-
-PC::Integer<int> reverse(const PC::Integer<int>& number) {
-    const std::vector<int> N = number.GetData();
-    std::vector<int> temp;
-    for (int i = N.size() - 1; i >= 0; --i)
-	temp.push_back(N[i]);
-
-    return PC::Integer<int> (temp);
-}
-
-bool is_palindrome(const PC::Integer<int>& number) {
-    const std::vector<int> N = number.GetData();
-    int j = N.size() - 1;
+bool is_palindrome(const std::string& number) {
+    int j = number.size() - 1;
     for (std::size_t i = 0; i < j; ++i, --j)
-	if (N[i] != N[j])
+	if (number[i] != number[j])
 	    return false;
+    
     return true;
 }
 
 bool is_lychrel_number(const int& N) {
-    PC::Integer<int> number(N);
+    Integer number(N);
     for (int i = 0; i < 50; ++i) {
-	number += reverse(number);
-	if (is_palindrome(number))
+	number += number.GetReverse();
+	if (is_palindrome(number.GetReverse()))
 	    return false;
     }
 
