@@ -442,7 +442,6 @@ void Integer::Print() const {
         printf("-");
     for (int i = m_data.length() - 1; i >= 0; --i)
         printf("%c", m_data[i]);
-    printf("\n");
 }
 
 std::string Integer::Get() const {
