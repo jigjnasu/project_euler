@@ -7,14 +7,13 @@ int main() {
     std::clock_t start = clock();
     Integer A(2);
     for (int i = 0; i < N - 1; ++i)
-	A = A * 2;
+	A *= 2;
 
     int sum = 0;
-    std::vector<int> number = A.GetData();
+    std::string number = A.GetReverse();
     for (std::size_t i = 0; i < number.size(); ++i)
-	sum += number[i];
+	sum += number[i] - '0';
 
-    printf("sum == %d\n", sum);
-	
+    printf("sum == [%d]\n", sum);
     printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
 }

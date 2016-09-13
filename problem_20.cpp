@@ -5,14 +5,14 @@
 int main() {
     std::clock_t start = clock();
 
-    PROJECT_EULER::COMMON::Integer<int> number(100);
+    Integer number(100);
     for (int i = 99; i >= 2; --i)
 	number *= i;
 
     int sum = 0;
-    const std::vector<int> num = number.GetData();
+    std::string num = number.GetReverse();
     for (std::size_t i = 0; i < num.size(); ++i)
-	sum += num[i];
+	sum += num[i] - '0';
 
     printf("Sum of digits of 100! == [%d]\n", sum);
 	

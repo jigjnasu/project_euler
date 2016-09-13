@@ -34,31 +34,55 @@ public:
 
     ~Integer();
 
+    // Addition functions
     Integer operator + (const Integer& rhs);
     Integer operator + (const std::string& rhs);
     Integer operator + (const int& rhs);
 
+    // += functions
     void operator += (const Integer& rhs);
     void operator += (const std::string& rhs);
     void operator += (const int& rhs);
 
+    // Subtraction functions
     Integer operator - (const Integer& rhs);
-#if 0    
     Integer operator - (const std::string& rhs);
     Integer operator - (const int& rhs);
 
+    // -= functions
     void operator -= (const Integer& rhs);
     void operator -= (const std::string& rhs);
     void operator -= (const int& rhs);
-#endif
+
+    // Multiplication functions
+    Integer operator * (const Integer& rhs);
+    Integer operator * (const std::string& rhs);
+    Integer operator * (const int& rhs);
+
+    // *= functions
+    void operator *= (const Integer& rhs);
+    void operator *= (const std::string& rhs);
+    void operator *= (const int& rhs);
+
+    // Comparission operators
+    bool operator < (const Integer& rhs);
+    bool operator > (const Integer& rhs);
+    bool operator == (const Integer& rhs);
 
     std::size_t Size() const;
     void Print() const;
+    std::string Get() const;
+    std::string GetReverse() const;
 
 private:
     bool        m_sign;
     std::string m_data;
 
+    // This function will do the actual subtraction of the data.
+    // When operator -= has been called.
+    void m_subtract(std::string& lhs, const std::string& rhs);
+    // This function will perform the subtraction of the data.
+    // When operator - has been called.
     void m_subtract(const std::string& A, const std::string& B, std::string& R);
 };
 
