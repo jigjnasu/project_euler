@@ -22,11 +22,11 @@ u_longi get_sum(const std::string& number) {
 void powerful_digit_sum() {
     u_longi max_sum = 0;
     for (int a = 2; a < 100; ++a) {
-	PROJECT_EULER::COMMON::Integer<int> number(1);
+	Integer number(1);
 	for (int i = 0; i < 100; ++i) {
 	    number *= a;
 			
-	    u_longi sum = get_sum(number.GetStringData());
+	    u_longi sum = get_sum(number.GetReverse());
 	    if (sum > max_sum)
 		max_sum = sum;
 	}
