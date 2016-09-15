@@ -7,8 +7,8 @@ void fibonacci() {
     Integer B(1);
     Integer C = A + B;
     int index = 3;
-
-    while (C.GetReverse().size() < 1000) {
+    
+    while (C.Size() < 1000) {
 	A = B;
 	B = C;
 	C = A + B;

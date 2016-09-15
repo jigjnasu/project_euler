@@ -20,7 +20,6 @@ int main() {
     }
 
     sum.Print();
-
     printf("Execution time == [%.8f] seconds\n", (clock() - static_cast<double>(start)) / CLOCKS_PER_SEC);
     return 0;
 }

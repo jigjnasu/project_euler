@@ -23,7 +23,7 @@ Integer power(const int& x, const int& n) {
 }
 
 void self_powers() {
-    Integer power_sum(0);
+    Integer power_sum;
 
     for (int i = 1; i <= 1000; ++i) {
         Integer number = power(i, i);
@@ -38,7 +38,7 @@ void self_powers() {
 int main() {
     std::clock_t start = clock();
     self_powers();
-    printf("Execution time == [%.6f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
 
     return 0;
 }
