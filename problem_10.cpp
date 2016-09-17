@@ -1,4 +1,5 @@
 #include "common/Integer.h"
+#include <cstdio>
 #include <cmath>
 #include <ctime>
 

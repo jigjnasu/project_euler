@@ -1,89 +1,78 @@
-#ifndef ALGORITHMS_RECURRENCE_INTEGER_H_
-#define ALGORITHMS_RECURRENCE_INTEGER_H_
+#ifndef ALGORITHM_RECURRENCE_KARATSUBA_INTEGER_H_
+#define ALGORITHM_RECURRENCE_KARATSUBA_INTEGER_H_
 
-/*
-  A Big integer implementation for Basic Arthematic operations.
-  As c++ can't store big numbers why not to implement our own.
-  Author: Rakesh Kumar cpp.rakesh@gmail.com
-  Date: Sep 9th, 2016
-*/
-
-#include <cstdio>
 #include <string>
-#include <vector>
 
 class Integer {
 public:
-    // Default Initialization
+    // Constructors
     Integer();
-
-    // Initialize with std::string
     Integer(const std::string& data);
-
-    // Initialization std::vector<int>
-    Integer(const std::vector<int>& data);
-
-    // Intitialization with int.
     Integer(int data);
 
-    // Copy constructor
+    // Copy and copy assignment constructors
     Integer(const Integer& rhs);
-
-    // Copy assignment operator
     Integer& operator = (const Integer& rhs);
 
-    ~Integer();
-
-    // Addition functions
+    // Addition operators
     Integer operator + (const Integer& rhs);
     Integer operator + (const std::string& rhs);
-    Integer operator + (const int& rhs);
+    Integer operator + (int rhs);
 
-    // += functions
     void operator += (const Integer& rhs);
     void operator += (const std::string& rhs);
-    void operator += (const int& rhs);
+    void operator += (int rhs);
 
-    // Subtraction functions
+    // Subtraction operators
     Integer operator - (const Integer& rhs);
     Integer operator - (const std::string& rhs);
-    Integer operator - (const int& rhs);
+    Integer operator - (int rhs);
 
-    // -= functions
     void operator -= (const Integer& rhs);
     void operator -= (const std::string& rhs);
-    void operator -= (const int& rhs);
+    void operator -= (int rhs);
 
-    // Multiplication functions
+    // Multiplication operators
     Integer operator * (const Integer& rhs);
     Integer operator * (const std::string& rhs);
-    Integer operator * (const int& rhs);
+    Integer operator * (int rhs);
 
-    // *= functions
     void operator *= (const Integer& rhs);
     void operator *= (const std::string& rhs);
-    void operator *= (const int& rhs);
+    void operator *= (int rhs);
 
-    // Comparission operators
-    bool operator < (const Integer& rhs);
-    bool operator > (const Integer& rhs);
-    bool operator == (const Integer& rhs);
-
-    std::size_t Size() const;
     void Print() const;
-    std::string Get() const;
+    std::size_t Size() const;
     std::string GetReverse() const;
 
 private:
-    bool        m_sign;
+    // It will hold the big number;
     std::string m_data;
 
-    // This function will do the actual subtraction of the data.
-    // When operator -= has been called.
-    void m_subtract(std::string& lhs, const std::string& rhs);
-    // This function will perform the subtraction of the data.
-    // When operator - has been called.
-    void m_subtract(const std::string& A, const std::string& B, std::string& R);
+    // This will hold the sign of the Integer
+    // True  = Negative
+    // False = Positve
+    bool m_sign;
+
+    // These functions will eventually add the two numbers
+    Integer m_add_return(const Integer& rhs);
+    Integer m_add_return(const std::string& rhs, bool is_sign);
+    Integer m_add_return(int rhs);
+
+    void m_add(const Integer& rhs);
+    void m_add(const std::string& rhs, bool is_sign);
+    void m_add(int rhs);
+
+    Integer m_subtract_return(const std::string& A, const std::string& B);
+    void m_subtract(std::string& A, const std::string& B);
+        
+    bool operator > (const std::string& rhs);
+    bool operator < (const std::string& rhs);
+    bool operator == (const std::string& rhs);
+    bool operator != (const std::string& rhs);
+
+    void m_reverse_copy(const std::string& data, std::string& result, int start_pos);
+    void m_convert_to_reverse_string(int data, std::string& result);
 };
 
-#endif // ALGORITHMS_RECURRENCE_INTEGER_H_
+#endif // ALGORITHM_RECURRENCE_KARATSUBA_INTEGER_H_

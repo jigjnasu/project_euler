@@ -33,7 +33,7 @@ void count_distinct_powers() {
 	}
     }
 
-    printf("Distinct powers count == [%u]\n", distinct_numbers.size());
+    printf("Distinct powers count == [%lu]\n", distinct_numbers.size());
 }
 
 int main() {
