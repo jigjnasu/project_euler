@@ -20,7 +20,7 @@ bool is_sub_string_divisible(const std::string& number) {
 
 void sub_string_divisibility() {
     std::vector<std::string> permutations;
-    Integer sum(0);
+    Integer sum;
     PROJECT_EULER::COMMON::PermutationGenerator<int> generator(10, true);
     generator.Generate();
     generator.Result(permutations);

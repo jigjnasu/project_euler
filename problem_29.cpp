@@ -17,6 +17,7 @@ Integer power(const int& x, const int& n) {
         if (n % 2 == 0) {
             Integer value = power(x, n / 2);
             return value * value;
+            
         } else {
             Integer value = power(x, n / 2);
             return value * value * x;
@@ -32,7 +33,7 @@ void count_distinct_powers() {
 	    distinct_numbers.insert(number.GetReverse());
 	}
     }
-
+    
     printf("Distinct powers count == [%lu]\n", distinct_numbers.size());
 }
 
