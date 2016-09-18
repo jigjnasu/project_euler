@@ -5,7 +5,7 @@
 int main() {
     std::clock_t start = clock();
 
-    Integer number(100);
+    PROJECT_EULER::COMMON::Integer number(100);
     for (int i = 99; i >= 2; --i)
 	number *= i;
 

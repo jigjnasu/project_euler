@@ -5,7 +5,7 @@
 #include <ctime>
 
 void large_sum(const std::string& file) {
-    Integer sum;
+    PROJECT_EULER::COMMON::Integer sum;
     std::fstream ifs(file.c_str());
     if (ifs.is_open()) {
 	std::string line;

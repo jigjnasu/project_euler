@@ -18,7 +18,7 @@ bool is_palindrome(const std::string& number) {
 }
 
 bool is_lychrel_number(const int& N) {
-    Integer number(N);
+    PROJECT_EULER::COMMON::Integer number(N);
     for (int i = 0; i < 50; ++i) {
 	number += number.GetReverse();
 	if (is_palindrome(number.GetReverse()))

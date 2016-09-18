@@ -8,25 +8,27 @@
 #include <cstdio>
 #include <ctime>
 
-Integer power(const int& x, const int& n) {
+namespace PC = PROJECT_EULER::COMMON;
+
+PC::Integer power(const int& x, const int& n) {
     if (n == 1) {
-        return Integer(x);
+        return PC::Integer(x);
     } else {
         if (n % 2 == 0) {
-            Integer value = power(x, n / 2);
+            PC::Integer value = power(x, n / 2);
             return value * value;
         } else {
-            Integer value = power(x, n / 2);
+            PC::Integer value = power(x, n / 2);
             return value * value * x;
         }
     }
 }
 
 void self_powers() {
-    Integer power_sum;
+    PC::Integer power_sum;
 
     for (int i = 1; i <= 1000; ++i) {
-        Integer number = power(i, i);
+        PC::Integer number = power(i, i);
 	power_sum += number;
     }
 

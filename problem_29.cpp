@@ -10,16 +10,18 @@
 #include <set>
 #include <cmath>
 
-Integer power(const int& x, const int& n) {
+namespace PC = PROJECT_EULER::COMMON;
+
+PC::Integer power(const int& x, const int& n) {
     if (n == 1) {
-        return Integer(x);
+        return PC::Integer(x);
     } else {
         if (n % 2 == 0) {
-            Integer value = power(x, n / 2);
+            PC::Integer value = power(x, n / 2);
             return value * value;
             
         } else {
-            Integer value = power(x, n / 2);
+            PC::Integer value = power(x, n / 2);
             return value * value * x;
         }
     }
@@ -29,8 +31,7 @@ void count_distinct_powers() {
     std::set<std::string> distinct_numbers;
     for (int a = 2; a <= 100; ++a) {
 	for (int b = 2; b <= 100; ++b) {
-	    Integer number = power(a, b);
-	    distinct_numbers.insert(number.GetReverse());
+	    distinct_numbers.insert(power(a, b).GetReverse());
 	}
     }
     

@@ -3,9 +3,9 @@
 #include <ctime>
 
 void fibonacci() {
-    Integer A(1);
-    Integer B(1);
-    Integer C = A + B;
+    PROJECT_EULER::COMMON::Integer A(1);
+    PROJECT_EULER::COMMON::Integer B(1);
+    PROJECT_EULER::COMMON::Integer C = A + B;
     int index = 3;
     
     while (C.Size() < 1000) {

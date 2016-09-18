@@ -22,7 +22,7 @@ u_longi get_sum(const std::string& number) {
 void powerful_digit_sum() {
     u_longi max_sum = 0;
     for (int a = 2; a < 100; ++a) {
-	Integer number(1);
+        PROJECT_EULER::COMMON::Integer number(1);
 	for (int i = 0; i < 100; ++i) {
 	    number *= a;
 			

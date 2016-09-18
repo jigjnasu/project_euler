@@ -8,12 +8,14 @@
 #include "Integer.h"
 #include <cstdio>
 
+namespace PC = PROJECT_EULER::COMMON;
+
 // Default constructor
-Integer::Integer() : m_sign(false) {}
+PC::Integer::Integer() : m_sign(false) {}
 
 // Parameterized constructor
 // Initialize with a string
-Integer::Integer(const std::string& data) : m_sign(false) {
+PC::Integer::Integer(const std::string& data) : m_sign(false) {
     int stop = 0;
     if (data[0] == '-') {
         m_sign = true;
@@ -26,7 +28,7 @@ Integer::Integer(const std::string& data) : m_sign(false) {
 
 // Parameterized constrcutor
 // Initialize class with an int value
-Integer::Integer(int data) : m_sign(false) {
+PC::Integer::Integer(int data) : m_sign(false) {
     if (data < 0) {
         m_sign = true;
         data *= -1;
@@ -39,14 +41,14 @@ Integer::Integer(int data) : m_sign(false) {
 }
 
 // Copy constructor
-Integer::Integer(const Integer& rhs) {
+PC::Integer::Integer(const Integer& rhs) {
     m_data.erase(m_data.begin(), m_data.end());
     m_sign = rhs.m_sign;
     m_data = rhs.m_data;
 }
 
 // Copy assignment operator
-Integer& Integer::operator = (const Integer& rhs) {
+PC::Integer& PC::Integer::operator = (const Integer& rhs) {
     m_data.erase(m_data.begin(), m_data.end());
     m_sign = rhs.m_sign;
     m_data = rhs.m_data;
@@ -55,7 +57,7 @@ Integer& Integer::operator = (const Integer& rhs) {
 
 // Overloaded + operator
 // Arugument is class object
-Integer Integer::operator + (const Integer& rhs) {
+PC::Integer PC::Integer::operator + (const Integer& rhs) {
     if (m_sign == false && rhs.m_sign == false)
         return m_add_return(rhs);
 
@@ -68,10 +70,12 @@ Integer Integer::operator + (const Integer& rhs) {
     Integer number;
     if (*this > rhs.m_data) {
         number.m_sign = m_sign;
-        return m_subtract_return(m_data, rhs.m_data);
+        number.m_data = m_subtract_return(m_data, rhs.m_data);
+        return number;
     } else if (*this < rhs.m_data) {
         number.m_sign = rhs.m_sign;
-        return m_subtract_return(rhs.m_data, m_data);
+        number.m_data = m_subtract_return(rhs.m_data, m_data);
+        return number;
     } else {
         number.m_data.push_back('0');
         return number;
@@ -80,7 +84,7 @@ Integer Integer::operator + (const Integer& rhs) {
 
 // Overloading + operator
 // Arugument is a normal string.
-Integer Integer::operator + (const std::string& rhs) {
+PC::Integer PC::Integer::operator + (const std::string& rhs) {
     bool sign = false;
     if (rhs[0] == '-')
         sign = true;
@@ -102,10 +106,12 @@ Integer Integer::operator + (const std::string& rhs) {
     Integer number;    
     if (*this > temp_rhs) {
         number.m_sign = m_sign;
-        return m_subtract_return(m_data, temp_rhs);
+        number.m_data = m_subtract_return(m_data, temp_rhs);
+        return number;
     } else if (*this < temp_rhs) {
         number.m_sign = sign;
-        return m_subtract_return(temp_rhs, m_data);
+        number.m_data = m_subtract_return(temp_rhs, m_data);
+        return number;
     } else {
         number.m_data.push_back('0');
         return number;
@@ -114,7 +120,7 @@ Integer Integer::operator + (const std::string& rhs) {
 
 // Operator overloading +
 // Arugment is integer
-Integer Integer::operator + (int rhs) {
+PC::Integer PC::Integer::operator + (int rhs) {
     int sign = false;
     if (rhs < 0) {
         sign = true;
@@ -136,10 +142,12 @@ Integer Integer::operator + (int rhs) {
     Integer number;
     if (*this > temp_rhs) {
         number.m_sign = m_sign;
-        return m_subtract_return(m_data, temp_rhs);
+        number.m_data = m_subtract_return(m_data, temp_rhs);
+        return number;
     } else if (*this < temp_rhs) {
         number.m_sign = sign;
-        return m_subtract_return(temp_rhs, m_data);
+        number.m_data = m_subtract_return(temp_rhs, m_data);
+        return number;
     } else {
         number.m_data.push_back('0');
         return number;
@@ -148,7 +156,7 @@ Integer Integer::operator + (int rhs) {
 
 // Operator overloading +=
 // Arugment is Class Object
-void Integer::operator += (const Integer& rhs) {
+void PC::Integer::operator += (const Integer& rhs) {
     if (m_sign == false && rhs.m_sign == false)
         return m_add(rhs);
 
@@ -173,7 +181,7 @@ void Integer::operator += (const Integer& rhs) {
 
 // Operator overload of +=
 // Argument is normal string not the reversed one.
-void Integer::operator += (const std::string& rhs) {
+void PC::Integer::operator += (const std::string& rhs) {
     bool sign = false;
     if (rhs[0] == '-')
         sign = true;
@@ -207,7 +215,7 @@ void Integer::operator += (const std::string& rhs) {
 
 // Operator overloading +=
 // Argument type int
-void Integer::operator += (int rhs) {
+void PC::Integer::operator += (int rhs) {
     int sign = false;
     if (rhs < 0) {
         sign = true;
@@ -240,17 +248,19 @@ void Integer::operator += (int rhs) {
 
 // Operator overloading of -
 // Argument type class object.
-Integer Integer::operator - (const Integer& rhs) {
+PC::Integer PC::Integer::operator - (const Integer& rhs) {
     if (m_sign == false && rhs.m_sign)
         return m_add_return(rhs);
 
     Integer number;
     if (*this > rhs.m_data) {
         number.m_sign = m_sign;
-        return m_subtract_return(m_data, rhs.m_data);
+        number.m_data = m_subtract_return(m_data, rhs.m_data);
+        return number;
     } else if (*this < rhs.m_data) {
-        number.m_sign = rhs.m_sign;
-        return m_subtract_return(rhs.m_data, m_data);
+        number.m_sign = true;
+        number.m_data = m_subtract_return(rhs.m_data, m_data);
+        return number;
     } else {
         number.m_data.push_back('0');
         return number;
@@ -260,7 +270,7 @@ Integer Integer::operator - (const Integer& rhs) {
 // Operator overloading of -
 // Arugment type std::string normal one "123", not reverse one,
 // which I use for arethmatic operations.
-Integer Integer::operator - (const std::string& rhs) {
+PC::Integer PC::Integer::operator - (const std::string& rhs) {
     bool sign = false;
     
     if (rhs[0] == '-')
@@ -278,10 +288,12 @@ Integer Integer::operator - (const std::string& rhs) {
     Integer number;    
     if (*this > temp_rhs) {
         number.m_sign = m_sign;
-        return m_subtract_return(m_data, temp_rhs);
+        number.m_data = m_subtract_return(m_data, temp_rhs);
+        return number;
     } else if (*this < temp_rhs) {
         number.m_sign = sign;
-        return m_subtract_return(temp_rhs, m_data);
+        number.m_data = m_subtract_return(temp_rhs, m_data);
+        return number;
     } else {
         number.m_data.push_back('0');
         return number;
@@ -290,7 +302,7 @@ Integer Integer::operator - (const std::string& rhs) {
 
 // Operator overloading of -
 // Argument type int
-Integer Integer::operator - (int rhs) {
+PC::Integer PC::Integer::operator - (int rhs) {
     bool sign = false;
     if (rhs < 0) {
         rhs *= -1;
@@ -303,10 +315,12 @@ Integer Integer::operator - (int rhs) {
     Integer number;
     if (*this > temp_rhs) {
         number.m_sign = m_sign;
-        return m_subtract_return(m_data, temp_rhs);
+        number.m_data = m_subtract_return(m_data, temp_rhs);
+        return number;
     } else if (*this < temp_rhs) {
         number.m_sign = sign;
-        return m_subtract_return(temp_rhs, m_data);
+        number.m_data = m_subtract_return(temp_rhs, m_data);
+        return number;
     } else {
         number.m_data.push_back('0');
         return number;
@@ -315,7 +329,7 @@ Integer Integer::operator - (int rhs) {
 
 // Operator overloading of -=
 // Argument type class object
-void Integer::operator -= (const Integer& rhs) {
+void PC::Integer::operator -= (const Integer& rhs) {
     if (m_sign == false && rhs.m_sign)
         return m_add(rhs);
 
@@ -335,7 +349,7 @@ void Integer::operator -= (const Integer& rhs) {
 
 // Operator overloading of -=
 // Argument type std::string normal one
-void Integer::operator -= (const std::string& rhs) {
+void PC::Integer::operator -= (const std::string& rhs) {
     bool sign = false;
     if (rhs[0] == '-')
         sign = true;
@@ -364,7 +378,7 @@ void Integer::operator -= (const std::string& rhs) {
 
 // Operator overloading -=
 // Argument type int
-void Integer::operator -= (int rhs) {
+void PC::Integer::operator -= (int rhs) {
     bool sign = false;
     if (rhs < 0) {
         sign = true;
@@ -392,7 +406,7 @@ void Integer::operator -= (int rhs) {
 
 // Operator overloading of *
 // Argument class object
-Integer Integer::operator * (const Integer& rhs) {
+PC::Integer PC::Integer::operator * (const Integer& rhs) {
     Integer number;
     if (m_sign || rhs.m_sign)
         number.m_sign = true;
@@ -425,7 +439,7 @@ Integer Integer::operator * (const Integer& rhs) {
 
 // Operator overloading of *
 // Argument type std::string normal orientation
-Integer Integer::operator * (const std::string& rhs) {
+PC::Integer PC::Integer::operator * (const std::string& rhs) {
     int stop = 0;
     Integer number;
     if (m_sign || rhs[0] == '-') {
@@ -461,7 +475,7 @@ Integer Integer::operator * (const std::string& rhs) {
 
 // Operator overloading *
 // Argument type int
-Integer Integer::operator * (int rhs) {
+PC::Integer PC::Integer::operator * (int rhs) {
     Integer number;
     if (m_sign || rhs < 0) {
         number.m_sign = true;
@@ -487,7 +501,7 @@ Integer Integer::operator * (int rhs) {
 
 // Operator overloading *=
 // Argument type class object
-void Integer::operator *= (const Integer& rhs) {
+void PC::Integer::operator *= (const Integer& rhs) {
     Integer number;
     if (m_sign || rhs.m_sign)
         m_sign = true;
@@ -520,7 +534,7 @@ void Integer::operator *= (const Integer& rhs) {
 
 // Operator overloading *=
 // Argument type std::string normal one.
-void Integer::operator *= (const std::string& rhs) {
+void PC::Integer::operator *= (const std::string& rhs) {
     int stop = 0;
     Integer number;
     if (m_sign || rhs[0] == '-') {
@@ -556,7 +570,7 @@ void Integer::operator *= (const std::string& rhs) {
 
 // Operator overloading *=
 // Argument type int
-void Integer::operator *= (int rhs) {
+void PC::Integer::operator *= (int rhs) {
     if (rhs < 0) {
         m_sign = true;
         rhs *= -1;
@@ -575,8 +589,22 @@ void Integer::operator *= (int rhs) {
     }
 }
 
+/* Split function, which will split the high and low by a position.
+   Example 123456789, and position is 3
+   The high will be 123 and low will be 456789
+   As we store data in reverse order for easy mathematical operations
+   We need to take care high will return from the last part of the string
+   and low will return from first part of the string
+ */
+
+void PC::Integer::Split(int size, Integer& high, Integer& low) const {
+    const std::size_t length = m_data.size();
+    low.m_data = m_data.substr(0, size);
+    high.m_data = m_data.substr(size, length - size);
+}
+
 // Print the number
-void Integer::Print() const {
+void PC::Integer::Print() const {
     if (m_sign)
         printf("-");
     for (int i = m_data.size() - 1; i >= 0; --i)
@@ -585,17 +613,17 @@ void Integer::Print() const {
 }
 
 // return the size of the number
-std::size_t Integer::Size() const {
+std::size_t PC::Integer::Size() const {
     return m_data.size();
 }
 
 // Get the reverse number
-std::string Integer::GetReverse() const {
+std::string PC::Integer::GetReverse() const {
     return m_data;
 }
 
 // Add *this + class object
-Integer Integer::m_add_return(const Integer& rhs) {
+PC::Integer PC::Integer::m_add_return(const Integer& rhs) {
     Integer number;
     std::size_t i = 0;
     std::size_t j = 0;
@@ -629,7 +657,7 @@ Integer Integer::m_add_return(const Integer& rhs) {
 
 // Add two numbers, where arugment is a string type with its sign mentioned
 // is_sign true means it is a negative number else it is a positive number
-Integer Integer::m_add_return(const std::string& rhs, bool is_sign) {
+PC::Integer PC::Integer::m_add_return(const std::string& rhs, bool is_sign) {
     Integer number;
     int stop = 0;
     if (is_sign)
@@ -666,7 +694,7 @@ Integer Integer::m_add_return(const std::string& rhs, bool is_sign) {
 }
 
 // Add two numbers, where argument type is int
-Integer Integer::m_add_return(int rhs) {
+PC::Integer PC::Integer::m_add_return(int rhs) {
     Integer number;
     int carry = rhs;
 
@@ -685,7 +713,7 @@ Integer Integer::m_add_return(int rhs) {
 }
 
 // Add number to the *this, argument type is class object
-void Integer::m_add(const Integer& rhs) {
+void PC::Integer::m_add(const Integer& rhs) {
     std::size_t i = 0;
     std::size_t j = 0;
 
@@ -718,7 +746,7 @@ void Integer::m_add(const Integer& rhs) {
 }
 
 // Add string type argument to the current object.
-void Integer::m_add(const std::string& rhs, bool is_sign) {
+void PC::Integer::m_add(const std::string& rhs, bool is_sign) {
     int stop = 0;
     std::size_t i = 0;
     int j = rhs.size() - 1;
@@ -756,7 +784,7 @@ void Integer::m_add(const std::string& rhs, bool is_sign) {
 }
 
 // Add integer to the current object.
-void Integer::m_add(int rhs) {
+void PC::Integer::m_add(int rhs) {
     int carry = rhs;
     for (std::size_t i = 0; i < m_data.size(); ++i) {
         const int sum = carry + (m_data[i] - '0');
@@ -775,40 +803,16 @@ void Integer::m_add(int rhs) {
 
 // Subtract A - B and return the result.
 // Argument A and B both are reveresd strings
-Integer Integer::m_subtract_return(const std::string& A, const std::string& B) {
+std::string PC::Integer::m_subtract_return(const std::string& A, const std::string& B) {
     Integer number;
     std::string TA = A;
-
-    std::size_t i = 0;
-
-    while (i < TA.size() && i < B.size()) {
-        if (TA[i] >= B[i]) {
-            number.m_data.push_back((TA[i] - '0') - (B[i] - '0') + '0');
-        } else {
-            number.m_data.push_back((10 + (TA[i] - '0') - (B[i] - '0')) + '0');
-
-            std::size_t j = i + 1;
-            while (TA[j] == '0')
-                TA[j++] = '9';
-
-            if (j == TA.size() - 1)
-                TA.erase(j);
-
-            --TA[j];
-        }
-        ++i;
-    }
-
-    while (i < TA.size()) {
-        number.m_data.push_back(TA[i++]);
-    }
-
-    return number;
+    m_subtract(TA, B);
+    return TA;
 }
 
 // subtract A - B and store ito the A
 // Both A and B are strings.
-void Integer::m_subtract(std::string& A, const std::string& B) {
+void PC::Integer::m_subtract(std::string& A, const std::string& B) {
     std::size_t i = 0;
 
     while (i < A.size() && i < B.size()) {
@@ -821,18 +825,25 @@ void Integer::m_subtract(std::string& A, const std::string& B) {
             while (A[j] == '0')
                 A[j++] = '9';
 
-            if (j == A.size() - 1)
+            if (j == A.size() - 1 && A[j] == '1')
                 A.erase(j);
-
+            
             --A[j];
         }
         ++i;
     }
+
+    // Remove the last 00 if any because it makes no sense.
+    for (int i = A.size() - 1; i >= 0; --i)
+        if (A[i] == '0')
+            A.erase(i);
+        else
+            break;
 }
 
 // If current value > string argument
 // return true else false
-bool Integer::operator > (const std::string& rhs) {
+bool PC::Integer::operator > (const std::string& rhs) {
     if (m_data.size() > rhs.size()) {
         return true;
     } else if (m_data.size() < rhs.size()) {
@@ -848,7 +859,7 @@ bool Integer::operator > (const std::string& rhs) {
 
 // If current value < string argument
 // return true else false
-bool Integer::operator < (const std::string& rhs) {
+bool PC::Integer::operator < (const std::string& rhs) {
     if (m_data.size() < rhs.size()) {
         return true;
     } else if (m_data.size() > rhs.size()) {
@@ -864,7 +875,7 @@ bool Integer::operator < (const std::string& rhs) {
 
 // If current value == string arugment
 // return true else false
-bool Integer::operator == (const std::string& rhs) {
+bool PC::Integer::operator == (const std::string& rhs) {
     if (m_data.size() != rhs.size())
         return false;
     for (std::size_t i = 0; i < m_data.size(); ++i)
@@ -876,7 +887,7 @@ bool Integer::operator == (const std::string& rhs) {
 
 // If current value != string argument
 // return true else false
-bool Integer::operator != (const std::string& rhs) {
+bool PC::Integer::operator != (const std::string& rhs) {
     if (m_data.size() != rhs.size())
         return true;
 
@@ -888,13 +899,13 @@ bool Integer::operator != (const std::string& rhs) {
 }
 
 // copy the string data to the result from back to start
-void Integer::m_reverse_copy(const std::string& data, std::string& result, int start_pos) {
+void PC::Integer::m_reverse_copy(const std::string& data, std::string& result, int start_pos) {
     for (int i = data.size() - 1; i >= start_pos; --i)
         result.push_back(data[i]);
 }
 
 // convert the int to string in reverse way
-void Integer::m_convert_to_reverse_string(int data, std::string& result) {
+void PC::Integer::m_convert_to_reverse_string(int data, std::string& result) {
     while (data) {
         result.push_back((data % 10) + '0');
         data /= 10;
