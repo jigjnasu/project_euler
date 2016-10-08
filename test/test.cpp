@@ -1,5 +1,6 @@
 #include "Problem_1.h"
 #include "Problem_2.h"
+#include "Problem_3.h"
 #include <cstdio>
 #include <ctime>
 
@@ -28,11 +29,24 @@ void test_case_for_problem_2() {
     printf("----------------------------------------------------------------------------------------\n");        
 }
 
+void test_case_for_problem_3() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_3 problem;
+    problem.LargestFactor(600851475143);
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");    
+}
+
 int main() {
     printf("------------------------------------- Problem 1 ----------------------------------------\n");
     test_case_for_problem_1();
     printf("------------------------------------- Problem 2 ----------------------------------------\n");    
     test_case_for_problem_2();
+    printf("------------------------------------- Problem 3 ----------------------------------------\n");    
+    test_case_for_problem_3();
     
     return 0;
 }
