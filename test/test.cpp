@@ -23,6 +23,8 @@
 #include "Problem_25.h"
 #include "Problem_26.h"
 #include "Problem_27.h"
+#include "Problem_29.h"
+#include "Problem_30.h"
 #include <cstdio>
 #include <ctime>
 
@@ -304,8 +306,29 @@ void test_case_for_problem_27() {
     printf("----------------------------------------------------------------------------------------\n");    
 }
 
+void test_case_for_problem_29() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_29 problem;
+    problem.distinct_powers();
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");    
+}
+
+void test_case_for_problem_30() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_30 problem;
+    problem.digit_fifth_power();
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");    
+}
+
 int main() {
-#if 0
     printf("------------------------------------- Problem 1 ----------------------------------------\n");
     test_case_for_problem_1();
     printf("------------------------------------- Problem 2 ----------------------------------------\n");    
@@ -354,9 +377,12 @@ int main() {
     test_case_for_problem_25();
     printf("------------------------------------- Problem 26 ---------------------------------------\n");    
     test_case_for_problem_26();
-#endif    
     printf("------------------------------------- Problem 27 ---------------------------------------\n");    
     test_case_for_problem_27();
+    printf("------------------------------------- Problem 29 ---------------------------------------\n");    
+    test_case_for_problem_29();
+    printf("------------------------------------- Problem 30 ---------------------------------------\n");    
+    test_case_for_problem_30();
     
     return 0;
 }
