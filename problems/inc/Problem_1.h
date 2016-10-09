@@ -8,7 +8,7 @@ namespace project_euler {
             Problem_1();
             ~Problem_1();
 
-            int Sum(int i, int n) const;
+            int sum(int i, int n) const;
         };
     };
 };

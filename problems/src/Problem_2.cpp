@@ -6,7 +6,7 @@ pp::Problem_2::Problem_2() {}
 
 pp::Problem_2::~Problem_2() {}
 
-int pp::Problem_2::Sum() const {
+int pp::Problem_2::sum() const {
     int A = 1;
     int B = 2;
     int C = A + B;

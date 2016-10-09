@@ -10,7 +10,7 @@ namespace project_euler {
             Problem_3();
             ~Problem_3();
 
-            void LargestFactor(const u_long& n);
+            void largest_factor(const u_long& n) const;
         };  
     };  
 };
