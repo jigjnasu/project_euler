@@ -25,6 +25,32 @@
 #include "Problem_27.h"
 #include "Problem_29.h"
 #include "Problem_30.h"
+#include "Problem_32.h"
+#include "Problem_33.h"
+#include "Problem_34.h"
+#include "Problem_35.h"
+#include "Problem_36.h"
+#include "Problem_37.h"
+#include "Problem_38.h"
+#include "Problem_39.h"
+#include "Problem_40.h"
+#include "Problem_41.h"
+#include "Problem_42.h"
+#include "Problem_43.h"
+#include "Problem_44.h"
+#include "Problem_45.h"
+#include "Problem_46.h"
+#include "Problem_47.h"
+#include "Problem_48.h"
+#include "Problem_49.h"
+#include "Problem_50.h"
+#include "Problem_52.h"
+#include "Problem_54.h"
+#include "Problem_55.h"
+#include "Problem_56.h"
+#include "Problem_92.h"
+#include "Problem_99.h"
+#include "Problem_125.h"
 #include <cstdio>
 #include <ctime>
 
@@ -328,7 +354,294 @@ void test_case_for_problem_30() {
     printf("----------------------------------------------------------------------------------------\n");    
 }
 
+void test_case_for_problem_32() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_32 problem;
+    problem.pandigital_product();
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");    
+}
+
+void test_case_for_problem_33() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_33 problem;
+    problem.digit_cancelling_fractions();
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");    
+}
+
+void test_case_for_problem_34() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_34 problem;
+    problem.digit_factorials();
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");    
+}
+
+void test_case_for_problem_35() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_35 problem;
+    problem.circular_primes();
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");    
+}
+
+void test_case_for_problem_36() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_36 problem;
+    problem.double_base_palindromes();
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");    
+}
+
+void test_case_for_problem_37() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_37 problem;
+    problem.truncatable_primes();
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");    
+}
+
+void test_case_for_problem_38() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_38 problem;
+    problem.pandigital_multiples();
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");    
+}
+
+void test_case_for_problem_39() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_39 problem;
+    problem.integer_right_triangles();
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");    
+}
+
+void test_case_for_problem_40() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_40 problem;
+    problem.champernowne_constant();
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");    
+}
+
+void test_case_for_problem_41() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_41 problem;
+    problem.pandigital_prime();
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");    
+}
+
+void test_case_for_problem_42() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_42 problem;
+    problem.count_coded_triangle_numbers("../data/words.txt");
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");    
+}
+
+void test_case_for_problem_43() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_43 problem;
+    problem.sub_string_divisiblity();
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");    
+}
+
+void test_case_for_problem_44() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_44 problem;
+    problem.min_difference();
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");    
+}
+
+void test_case_for_problem_45() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_45 problem;
+    problem.next_number();
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");    
+}
+
+void test_case_for_problem_46() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_46 problem;
+    problem.goldbach_conjecture();
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");    
+}
+
+void test_case_for_problem_47() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_47 problem;
+    problem.distinct_prime_factors();
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");    
+}
+
+void test_case_for_problem_48() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_48 problem;
+    problem.self_powers();
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");    
+}
+
+void test_case_for_problem_49() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_49 problem;
+    problem.prime_permutations();
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");    
+}
+
+void test_case_for_problem_50() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_50 problem;
+    problem.consecutive_prime_sum();
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");    
+}
+
+void test_case_for_problem_52() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_52 problem;
+    problem.permutated_multiples();
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");    
+}
+
+void test_case_for_problem_54() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_54 problem;
+    problem.count_player_wins(1);
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");    
+}
+
+void test_case_for_problem_55() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_55 problem;
+    problem.lychrel_numbers(10000);
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");    
+}
+
+void test_case_for_problem_56() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_56 problem;
+    problem.powerful_digit_sum();
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");    
+}
+
+void test_case_for_problem_92() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_92 problem;
+    problem.square_digit_chains();
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");    
+}
+
+void test_case_for_problem_99() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_99 problem;
+    problem.largest_number("../data/base_exp.txt");
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");    
+}
+
+void test_case_for_problem_125() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_125 problem;
+    problem.palindromic_sums();
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");    
+}
+
 int main() {
+#if 0
     printf("------------------------------------- Problem 1 ----------------------------------------\n");
     test_case_for_problem_1();
     printf("------------------------------------- Problem 2 ----------------------------------------\n");    
@@ -383,6 +696,61 @@ int main() {
     test_case_for_problem_29();
     printf("------------------------------------- Problem 30 ---------------------------------------\n");    
     test_case_for_problem_30();
+    printf("------------------------------------- Problem 32 ---------------------------------------\n");    
+    test_case_for_problem_32();
+    printf("------------------------------------- Problem 33 ---------------------------------------\n");    
+    test_case_for_problem_33();
+    printf("------------------------------------- Problem 34 ---------------------------------------\n");    
+    test_case_for_problem_34();
+    printf("------------------------------------- Problem 35 ---------------------------------------\n");    
+    test_case_for_problem_35();
+    printf("------------------------------------- Problem 36 ---------------------------------------\n");    
+    test_case_for_problem_36();
+    printf("------------------------------------- Problem 37 ---------------------------------------\n");    
+    test_case_for_problem_37();
+    printf("------------------------------------- Problem 38 ---------------------------------------\n");    
+    test_case_for_problem_38();
+    printf("------------------------------------- Problem 39 ---------------------------------------\n");    
+    test_case_for_problem_39();
+    printf("------------------------------------- Problem 40 ---------------------------------------\n");    
+    test_case_for_problem_40();
+    printf("------------------------------------- Problem 41 ---------------------------------------\n");    
+    test_case_for_problem_41();
+    printf("------------------------------------- Problem 42 ---------------------------------------\n");    
+    test_case_for_problem_42();
+    printf("------------------------------------- Problem 43 ---------------------------------------\n");    
+    test_case_for_problem_43();
+    printf("------------------------------------- Problem 44 ---------------------------------------\n");    
+    test_case_for_problem_44();
+    printf("------------------------------------- Problem 45 ---------------------------------------\n");    
+    test_case_for_problem_45();
+    printf("------------------------------------- Problem 46 ---------------------------------------\n");    
+    test_case_for_problem_46();
+    printf("------------------------------------- Problem 47 ---------------------------------------\n");    
+    test_case_for_problem_47();
+    printf("------------------------------------- Problem 48 ---------------------------------------\n");    
+    test_case_for_problem_48();
+    printf("------------------------------------- Problem 49 ---------------------------------------\n");    
+    test_case_for_problem_49();
+    printf("------------------------------------- Problem 50 ---------------------------------------\n");    
+    test_case_for_problem_50();
+    printf("------------------------------------- Problem 52 ---------------------------------------\n");    
+    test_case_for_problem_52();
+#endif
+    printf("------------------------------------- Problem 54 ---------------------------------------\n");    
+    test_case_for_problem_54();
+#if 0
+    printf("------------------------------------- Problem 55 ---------------------------------------\n");    
+    test_case_for_problem_55();
+    printf("------------------------------------- Problem 56 ---------------------------------------\n");    
+    test_case_for_problem_56();
+    printf("------------------------------------- Problem 92 ---------------------------------------\n");    
+    test_case_for_problem_92();
+    printf("------------------------------------- Problem 99 ---------------------------------------\n");    
+    test_case_for_problem_99();
+    printf("------------------------------------- Problem 125 --------------------------------------\n");    
+    test_case_for_problem_125();
+#endif    
     
     return 0;
 }

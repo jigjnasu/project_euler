@@ -1,7 +1,7 @@
 #ifndef PROJECT_EULER_PROBLEMS_PROBLEM_3_H_
 #define PROJECT_EULER_PROBLEMS_PROBLEM_3_H_
 
-typedef unsigned long long int u_long;
+typedef unsigned long long int d_long;
 
 namespace project_euler {
     namespace problems {
@@ -10,7 +10,7 @@ namespace project_euler {
             Problem_3();
             ~Problem_3();
 
-            void largest_factor(const u_long& n) const;
+            void largest_factor(const d_long& n) const;
         };  
     };  
 };

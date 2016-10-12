@@ -33,7 +33,7 @@ void pp::Problem_22::names_scores(const std::string& file) const {
             pos = next_pos;
         }
 
-        utility::algorithms::MergeSort<std::string> merge_sort;
+        utility::algorithms::sort::MergeSort<std::string> merge_sort;
         utility::string::String<int> string;
         merge_sort.sort(names);
         

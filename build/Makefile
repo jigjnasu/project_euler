@@ -11,11 +11,27 @@ PROBLEMS_INC := -I ~/git_hub/ProjectEuler/problems/inc
 
 TEST_SRC = ../test/test.cpp
 
+PROBLEM_54_SRC := $(wildcard ~/git_hub/ProjectEuler/problems/src/problem_54/*.cpp)
+OBJ_FILES += $(addprefix $(OBJ_PATH)/,$(notdir $(PROBLEM_54_SRC:.cpp=.o)))
+
 UTILITY_INTEGER_INC := -I ~/git_hub/Utility/integer/inc
 UTILITY_MATHS_INC := -I ~/git_hub/Utility/maths/inc
 UTILITY_COMMON_INC := -I ~/git_hub/Utility/common/inc
 UTILITY_STRING_INC := -I ~/git_hub/Utility/string/inc
-UTILITY_ALGORITHMS_INC := -I ~/git_hub/Utility/algorithms/inc
+UTILITY_ALGORITHMS_SEARCH_INC := -I ~/git_hub/Utility/algorithms/search/inc
+UTILITY_ALGORITHMS_SORT_INC := -I ~/git_hub/Utility/algorithms/sort/inc
+UTILITY_PERMUTATIONS_INC := -I ~/git_hub/Utility/permutation/inc
+PROBLEM_54_INC := -I ~/git_hub/ProjectEuler/problems/src/problem_54
+
+INCLUDES := $(PROBLEMS_INC)
+INCLUDES += $(UTILITY_INTEGER_INC)
+INCLUDES += $(UTILITY_MATHS_INC)
+INCLUDES += $(UTILITY_COMMON_INC)
+INCLUDES += $(UTILITY_STRING_INC)
+INCLUDES += $(UTILITY_ALGORITHMS_SEARCH_INC)
+INCLUDES += $(UTILITY_ALGORITHMS_SORT_INC)
+INCLUDES += $(UTILITY_PERMUTATIONS_INC)
+INCLUDES += $(PROBLEM_54_INC)
 
 GXX = g++
 CCFLAGS = -g -c -Wall -O3
@@ -29,10 +45,13 @@ euler : $(OBJ_FILES) test
 	$(GXX) -o $(TARGET) $(OBJ_PATH)/*.o $(LD_PATH) $(LD)
 
 $(OBJ_PATH)/%.o : $(SRC_PATH)/%.cpp
-	$(GXX) $(CCFLAGS) $(PROBLEMS_INC) $(UTILITY_INTEGER_INC) $(UTILITY_MATHS_INC) $(UTILITY_COMMON_INC) $(UTILITY_STRING_INC) $(UTILITY_ALGORITHMS_INC) $< -o $@
+	$(GXX) $(CCFLAGS) $(INCLUDES) $< -o $@
 
 test: $(TEST_SRC)
-	$(GXX) $(CCFLAGS) $(PROBLEMS_INC) -o objs/test.o $(TEST_SRC)
+	$(GXX) $(CCFLAGS) $(PROBLEMS_INC) $(PROBLEM_54_INC) -o objs/test.o $(TEST_SRC)
+
+$(OBJ_PATH)/%.o: ~/git_hub/ProjectEuler/problems/src/problem_54/%.cpp
+	$(GXX) $(CCFLAGS) $(INCLUDES) $(PROBLEM_54_INC) $< -o $@
 
 clean:
 	rm -rf $(OBJ_PATH)/* $(TARGET)
