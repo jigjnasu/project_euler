@@ -48,6 +48,7 @@
 #include "Problem_54.h"
 #include "Problem_55.h"
 #include "Problem_56.h"
+#include "Problem_59.h"
 #include "Problem_92.h"
 #include "Problem_99.h"
 #include "Problem_125.h"
@@ -607,6 +608,17 @@ void test_case_for_problem_56() {
     printf("----------------------------------------------------------------------------------------\n");    
 }
 
+void test_case_for_problem_59() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_59 problem;
+    problem.sum_of_encrypted_message("../data/cipher.txt");
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");        
+}
+
 void test_case_for_problem_92() {
     const std::clock_t start = clock();
     
@@ -736,21 +748,23 @@ int main() {
     test_case_for_problem_50();
     printf("------------------------------------- Problem 52 ---------------------------------------\n");    
     test_case_for_problem_52();
-#endif
     printf("------------------------------------- Problem 54 ---------------------------------------\n");    
     test_case_for_problem_54();
-#if 0
     printf("------------------------------------- Problem 55 ---------------------------------------\n");    
     test_case_for_problem_55();
     printf("------------------------------------- Problem 56 ---------------------------------------\n");    
     test_case_for_problem_56();
+#endif
+    printf("------------------------------------- Problem 59 ---------------------------------------\n");    
+    test_case_for_problem_59();
+#if 0
     printf("------------------------------------- Problem 92 ---------------------------------------\n");    
     test_case_for_problem_92();
     printf("------------------------------------- Problem 99 ---------------------------------------\n");    
     test_case_for_problem_99();
     printf("------------------------------------- Problem 125 --------------------------------------\n");    
     test_case_for_problem_125();
-#endif    
+#endif
     
     return 0;
 }
