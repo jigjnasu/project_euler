@@ -100,11 +100,3 @@ int pp::Problem_59::m_encrypt_decrypt(const std::string& key, const std::vector<
     printf("\n");
     return sum;
 }
-
-bool pp::Problem_59::m_is_english_char(short value) const {
-    printf("value == [%d] || value == [%c]\n", value, value);
-    if ((value >= 'a' && value <= 'z') || (value >= 'A' && value <= 'Z'))
-        return true;
-    else
-        return false;
-}

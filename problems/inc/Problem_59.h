@@ -20,7 +20,6 @@ namespace project_euler {
                             const std::vector<short>& message) const;
             int m_encrypt_decrypt(const std::string& key,
                                   const std::vector<short>& message) const;
-            bool m_is_english_char(short value) const;
         };
     };
 };
