@@ -42,16 +42,21 @@ LD_PATH := -L ~/git_hub/Utility/lib/
 TARGET = euler
 
 euler : $(OBJ_FILES) test
-	$(GXX) -o $(TARGET) $(OBJ_PATH)/*.o $(LD_PATH) $(LD)
+	@echo "Generating executable --> euler"
+	@$(GXX) -o $(TARGET) $(OBJ_PATH)/*.o $(LD_PATH) $(LD)
 
 $(OBJ_PATH)/%.o : $(SRC_PATH)/%.cpp
-	$(GXX) $(CCFLAGS) $(INCLUDES) $< -o $@
+	@echo "Compiling --> $<"
+	@$(GXX) $(CCFLAGS) $(INCLUDES) $< -o $@
 
 test: $(TEST_SRC)
-	$(GXX) $(CCFLAGS) $(PROBLEMS_INC) $(PROBLEM_54_INC) -o objs/test.o $(TEST_SRC)
+	@echo "Compiling --> $<"
+	@$(GXX) $(CCFLAGS) $(PROBLEMS_INC) $(PROBLEM_54_INC) -o objs/test.o $(TEST_SRC)
 
 $(OBJ_PATH)/%.o: ~/git_hub/ProjectEuler/problems/src/problem_54/%.cpp
-	$(GXX) $(CCFLAGS) $(INCLUDES) $(PROBLEM_54_INC) $< -o $@
+	@echo "Compiling --> $<"
+	@$(GXX) $(CCFLAGS) $(INCLUDES) $(PROBLEM_54_INC) $< -o $@
 
 clean:
-	rm -rf $(OBJ_PATH)/* $(TARGET)
+	@echo "Removing --> all object files"
+	@rm -rf $(OBJ_PATH)/* $(TARGET)
