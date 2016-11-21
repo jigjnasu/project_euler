@@ -1,7 +1,7 @@
 #ifndef PROJECT_EULER_PROBLEMS_PROBLEM_14_H_
 #define PROJECT_EULER_PROBLEMS_PROBLEM_14_H_
 
-typedef unsigned long long int u_long;
+typedef unsigned long long int u_l;
 
 namespace project_euler {
     namespace problems {
@@ -13,7 +13,7 @@ namespace project_euler {
             void collatz_sequence() const;
             
         private:
-            int m_sequence_chain(u_long n) const;
+            int m_sequence_chain(u_l n) const;
         };
     };
 };

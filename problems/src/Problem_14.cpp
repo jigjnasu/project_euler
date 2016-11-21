@@ -8,9 +8,9 @@ pp::Problem_14::Problem_14() {}
 pp::Problem_14::~Problem_14() {}
 
 void pp::Problem_14::collatz_sequence() const {
-    u_long number = 0;
+    u_l number = 0;
     int longest_chain = 0;
-    for (u_long i = 2; i < 1000000; ++i) {
+    for (u_l i = 2; i < 1000000; ++i) {
         const int sequence = m_sequence_chain(i);
       
         if (sequence > longest_chain) {
@@ -22,7 +22,7 @@ void pp::Problem_14::collatz_sequence() const {
     printf("[%llu] has longest collatz sequence of [%d] elements\n", number, longest_chain);
 }
 
-int pp::Problem_14::m_sequence_chain(u_long n) const {
+int pp::Problem_14::m_sequence_chain(u_l n) const {
     int counter = 1;
     while (n != 1) {
         ++counter;

@@ -1,7 +1,7 @@
 #ifndef PROJECT_EULER_PROBLEMS_PROBLEM_12_H_
 #define PROJECT_EULER_PROBLEMS_PROBLEM_12_H_
 
-typedef unsigned long long int u_long;
+typedef unsigned long long int u_l;
 
 namespace project_euler {
     namespace problems {
@@ -13,7 +13,7 @@ namespace project_euler {
             void max_divisible_triangular_number() const;
 
         private:
-            int m_count_divisor(const u_long& n) const;
+            int m_count_divisor(const u_l& n) const;
         };
     };
 };
