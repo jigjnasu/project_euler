@@ -23,9 +23,11 @@ long pp::Problem_72::counting_fractions(const int& n) const {
         phi.push_back(i);
 
     for (std::size_t i = 2; i < phi.size(); ++i) {
-        if (phi[i] == static_cast<int>(i))
-            for (std::size_t j = i; j < phi.size(); j += i)
+        if (phi[i] == static_cast<int>(i)) {
+            phi[i] = i - 1;
+            for (std::size_t j = 2 * i; j < phi.size(); j += i)
                 phi[j] = (phi[j] * (i - 1)) / i;
+        }
         fractions_count += phi[i];
     }
 
