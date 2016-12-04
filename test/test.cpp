@@ -49,6 +49,7 @@
 #include "Problem_55.h"
 #include "Problem_56.h"
 #include "Problem_59.h"
+#include "Problem_69.h"
 #include "Problem_72.h"
 #include "Problem_92.h"
 #include "Problem_97.h"
@@ -621,6 +622,18 @@ void test_case_for_problem_59() {
     printf("----------------------------------------------------------------------------------------\n");        
 }
 
+void test_case_for_problem_69() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_69 problem;
+    const int n = 1000000;
+    problem.totient_maximum(n);
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");        
+}
+
 void test_case_for_problem_72() {
     const std::clock_t start = clock();
     const int n = 1000000;
@@ -781,14 +794,16 @@ int main() {
     test_case_for_problem_56();
     printf("------------------------------------- Problem 59 ---------------------------------------\n");    
     test_case_for_problem_59();
+#endif
+    printf("------------------------------------- Problem 69 ---------------------------------------\n");        
+    test_case_for_problem_69();
+#if 0    
     printf("------------------------------------- Problem 72 ---------------------------------------\n");        
     test_case_for_problem_72();
     printf("------------------------------------- Problem 92 ---------------------------------------\n");        
     test_case_for_problem_92();
-#endif
     printf("------------------------------------- Problem 97 ---------------------------------------\n");        
     test_case_for_problem_97();    
-#if 0
     printf("------------------------------------- Problem 99 ---------------------------------------\n");    
     test_case_for_problem_99();
     printf("------------------------------------- Problem 125 --------------------------------------\n");    
