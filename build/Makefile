@@ -51,7 +51,7 @@ $(OBJ_PATH)/%.o : $(SRC_PATH)/%.cpp
 
 test: $(TEST_SRC)
 	@echo "Compiling --> $<"
-	@$(GXX) $(CCFLAGS) $(PROBLEMS_INC) $(PROBLEM_54_INC) -o objs/test.o $(TEST_SRC)
+	@$(GXX) $(CCFLAGS) $(PROBLEMS_INC) $(INCLUDES) $(PROBLEM_54_INC) -o objs/test.o $(TEST_SRC)
 
 $(OBJ_PATH)/%.o: ~/git_hub/ProjectEuler/problems/src/problem_54/%.cpp
 	@echo "Compiling --> $<"

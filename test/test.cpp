@@ -51,6 +51,7 @@
 #include "Problem_59.h"
 #include "Problem_72.h"
 #include "Problem_92.h"
+#include "Problem_97.h"
 #include "Problem_99.h"
 #include "Problem_125.h"
 #include <cstdio>
@@ -643,6 +644,17 @@ void test_case_for_problem_92() {
     printf("----------------------------------------------------------------------------------------\n");    
 }
 
+void test_case_for_problem_97() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_97 problem;
+    problem.large_prime();
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");    
+}
+
 void test_case_for_problem_99() {
     const std::clock_t start = clock();
     
@@ -769,12 +781,14 @@ int main() {
     test_case_for_problem_56();
     printf("------------------------------------- Problem 59 ---------------------------------------\n");    
     test_case_for_problem_59();
-#endif
     printf("------------------------------------- Problem 72 ---------------------------------------\n");        
     test_case_for_problem_72();
-#if 0
     printf("------------------------------------- Problem 92 ---------------------------------------\n");        
     test_case_for_problem_92();
+#endif
+    printf("------------------------------------- Problem 97 ---------------------------------------\n");        
+    test_case_for_problem_97();    
+#if 0
     printf("------------------------------------- Problem 99 ---------------------------------------\n");    
     test_case_for_problem_99();
     printf("------------------------------------- Problem 125 --------------------------------------\n");    
