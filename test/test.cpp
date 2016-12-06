@@ -55,6 +55,7 @@
 #include "Problem_97.h"
 #include "Problem_99.h"
 #include "Problem_125.h"
+#include "Problem_187.h"
 #include <cstdio>
 #include <ctime>
 
@@ -690,6 +691,18 @@ void test_case_for_problem_125() {
     printf("----------------------------------------------------------------------------------------\n");    
 }
 
+void test_case_for_problem_187() {
+    const std::clock_t start = clock();
+    const long n = 100000000;
+    
+    pp::Problem_187 problem;
+    printf("Total semi prime numbers below [%ld] == [%d]\n", n, problem.semi_primes(n));
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");    
+}
+
 int main() {
 #if 0
     printf("------------------------------------- Problem 1 ----------------------------------------\n");
@@ -794,10 +807,8 @@ int main() {
     test_case_for_problem_56();
     printf("------------------------------------- Problem 59 ---------------------------------------\n");    
     test_case_for_problem_59();
-#endif
     printf("------------------------------------- Problem 69 ---------------------------------------\n");        
     test_case_for_problem_69();
-#if 0    
     printf("------------------------------------- Problem 72 ---------------------------------------\n");        
     test_case_for_problem_72();
     printf("------------------------------------- Problem 92 ---------------------------------------\n");        
@@ -808,7 +819,9 @@ int main() {
     test_case_for_problem_99();
     printf("------------------------------------- Problem 125 --------------------------------------\n");    
     test_case_for_problem_125();
-#endif
+#endif    
+    printf("------------------------------------- Problem 187 --------------------------------------\n");    
+    test_case_for_problem_187();    
     
     return 0;
 }
