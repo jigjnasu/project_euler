@@ -50,6 +50,7 @@
 #include "Problem_56.h"
 #include "Problem_59.h"
 #include "Problem_69.h"
+#include "Problem_70.h"
 #include "Problem_72.h"
 #include "Problem_92.h"
 #include "Problem_97.h"
@@ -635,6 +636,17 @@ void test_case_for_problem_69() {
     printf("----------------------------------------------------------------------------------------\n");        
 }
 
+void test_case_for_problem_70() {
+    const std::clock_t start = clock();
+    
+    pp::Problem_70 problem;
+    problem.totient_permutation();
+
+    printf("----------------------------------------------------------------------------------------\n");
+    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("----------------------------------------------------------------------------------------\n");        
+}
+
 void test_case_for_problem_72() {
     const std::clock_t start = clock();
     const int n = 1000000;
@@ -809,8 +821,12 @@ int main() {
     test_case_for_problem_59();
     printf("------------------------------------- Problem 69 ---------------------------------------\n");        
     test_case_for_problem_69();
-    printf("------------------------------------- Problem 72 ---------------------------------------\n");        
-    test_case_for_problem_72();
+#endif
+    printf("------------------------------------- Problem 70 ---------------------------------------\n");
+    test_case_for_problem_70();        
+#if 0
+    printf("------------------------------------- Problem 72 ---------------------------------------\n");
+    test_case_for_problem_72();        
     printf("------------------------------------- Problem 92 ---------------------------------------\n");        
     test_case_for_problem_92();
     printf("------------------------------------- Problem 97 ---------------------------------------\n");        
@@ -819,9 +835,9 @@ int main() {
     test_case_for_problem_99();
     printf("------------------------------------- Problem 125 --------------------------------------\n");    
     test_case_for_problem_125();
-#endif    
     printf("------------------------------------- Problem 187 --------------------------------------\n");    
-    test_case_for_problem_187();    
+    test_case_for_problem_187();
+#endif
     
     return 0;
 }
