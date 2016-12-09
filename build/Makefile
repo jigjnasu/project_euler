@@ -1,4 +1,5 @@
 # Simple Makefile for Project Euler compilation and it's test cases.
+# Author: Rakesh Kumar @ cpp.rakesh@gmail.com
 # October 8th, 2016
 
 SRC_PATH := ../problems/src
