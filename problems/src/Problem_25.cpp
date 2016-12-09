@@ -12,7 +12,7 @@ pp::Problem_25::~Problem_25() {}
 void pp::Problem_25::fibonacci() const {
     utility::maths::Maths<utility::integer::Integer> maths;
     std::size_t index = 1;
-    while (maths.fibonacci(index++).Size() < 1000);
+    while (maths.fibonacci(index++).size() < 1000);
 
     printf("Index == [%lu]\n", index - 1);
 }
