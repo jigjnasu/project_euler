@@ -29,8 +29,8 @@ bool pp::Problem_55::m_is_lychrel_number(int n) const {
     utility::common::Common<int> common;
 
     for (int i = 0; i < 50; ++i) {
-	number += number.GetReverse();
-	if (common.is_palindrome(number.GetReverse()))
+	number += number.get_reverse();
+	if (common.is_palindrome(number.get_reverse()))
 	    return false;
     }
 
