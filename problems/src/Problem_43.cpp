@@ -24,7 +24,7 @@ void pp::Problem_43::sub_string_divisiblity() const {
             sum += permutations[i];
         
     printf("Sum of all sub string divisibles === ");
-    sum.Print();
+    sum.print();
     printf("\n");    
 }
 
