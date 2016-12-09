@@ -11,8 +11,8 @@ namespace project_euler {
             TestSuite();
             ~TestSuite();
 
-            void run(int test_case) const;
-            void run_all() const;
+            void run(int test_case);
+            void run_all();
 
             typedef void (TestSuite::*ptrFunc)();
         private:
@@ -23,6 +23,8 @@ namespace project_euler {
 
             void m_start_timer();
             void m_end_timer() const;
+
+            void m_test_case_banner(int test_case) const;
 
             void m_test_case_for_problem_1();
             void m_test_case_for_problem_2();
