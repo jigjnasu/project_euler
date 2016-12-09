@@ -1,3 +1,4 @@
+
 #include "Problem_1.h"
 #include "Problem_2.h"
 #include "Problem_3.h"
@@ -715,7 +716,17 @@ void test_case_for_problem_187() {
     printf("----------------------------------------------------------------------------------------\n");    
 }
 
+void test_rakesh() {
+    utility::maths::Maths<int> maths;
+    for (int i = 1; i <= 100; ++i)
+        if (maths.is_sqrt(i))
+            printf("[%d] is a sqrt\n", i);
+        else
+            printf("[%d] is NOT a sqrt\n", i);
+}
+
 int main() {
+#if 0
     printf("------------------------------------- Problem 1 ----------------------------------------\n");
     test_case_for_problem_1();
     printf("------------------------------------- Problem 2 ----------------------------------------\n");    
@@ -834,6 +845,7 @@ int main() {
     test_case_for_problem_125();
     printf("------------------------------------- Problem 187 --------------------------------------\n");    
     test_case_for_problem_187();
-
+#endif
+    test_rakesh();
     return 0;
 }
