@@ -26,7 +26,7 @@ void pp::Problem_56::powerful_digit_sum() const {
     
     for (int a = 2; a < 100; ++a) {
         for (int b = 2; b < 100; ++b) {
-            const int sum = string.sum_of_digits(math.power(a, b).GetReverse());
+            const int sum = string.sum_of_digits(math.power(a, b).get_reverse());
             if (sum > max_sum) {
                 i = a;
                 j = b;
