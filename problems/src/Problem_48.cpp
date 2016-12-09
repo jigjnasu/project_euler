@@ -25,5 +25,5 @@ void pp::Problem_48::self_powers() const {
     }
 
     printf("Self power sum is here ----> \n");
-    power_sum.Print();
+    power_sum.print();
 }
