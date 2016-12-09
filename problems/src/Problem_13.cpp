@@ -17,7 +17,7 @@ void pp::Problem_13::large_sum(const std::string& file) const {
 	while (std::getline(ifs, line))
 	    sum += line;
 
-	sum.Print();
+	sum.print();
 	ifs.close();
     } else {
 	printf("There is an error while %s opening the file\n", file.c_str());
