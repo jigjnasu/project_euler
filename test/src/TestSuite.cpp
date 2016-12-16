@@ -613,7 +613,7 @@ void pt::TestSuite::m_test_case_for_problem_56() {
 void pt::TestSuite::m_test_case_for_problem_57() {
     m_start_timer();
 
-    m_test_case_banner(56);
+    m_test_case_banner(57);
     pp::Problem_57 problem;
     problem.square_root_convergents();
 

@@ -1,3 +1,9 @@
+/*
+  This is the solution for Problem 72, (Counting Fractions) from ProjectEuler.net
+  Author: Rakesh Kumar @ cpp.rakesh@gmail.com
+  Date: Dec 16th, 2016
+ */
+
 #include "Problem_57.h"
 #include "Integer.h"
 #include <cstdio>
