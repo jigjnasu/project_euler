@@ -26,8 +26,8 @@ void pp::Problem_12::max_divisible_triangular_number() const {
 
 int pp::Problem_12::m_count_divisor(const u_l& n) const {
   int counter = 0;
-  const int value = std::sqrt(static_cast<int>(n));
-  for (int i = 1; i <= value; ++i)
+  const u_l value = std::sqrt(static_cast<int>(n));
+  for (u_l i = 1; i <= value; ++i)
     if (n % i == 0)
       counter += 2;
 
