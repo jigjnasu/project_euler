@@ -1,5 +1,5 @@
 /*
-  This is the solution for Problem 72, (Counting Fractions) from ProjectEuler.net
+  This is the solution for Problem 57, (Square Root Convergents) from ProjectEuler.net
   Author: Rakesh Kumar @ cpp.rakesh@gmail.com
   Date: Dec 16th, 2016
  */
