@@ -1,3 +1,11 @@
+/*
+  Test suite for all the Project Euler problems.
+  Can run single test case by providing the problem number.
+  Can run all the test cases one by one in ascending order.
+  Author: Rakesh Kumar @ cpp.rakesh@gmail.com
+  Date: Dec 17th, 2016
+ */
+
 #ifndef PROJECT_EULER_TEST_TESTSUITE_H_
 #define PROJECT_EULER_TEST_TESTSUITE_H_
 
