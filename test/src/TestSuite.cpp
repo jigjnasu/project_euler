@@ -88,7 +88,8 @@ void pt::TestSuite::m_initialize_test_cases_dictionary() {
     m_test_cases_dictionary[55] = &TestSuite::m_test_case_for_problem_55;
     m_test_cases_dictionary[56] = &TestSuite::m_test_case_for_problem_56;
     m_test_cases_dictionary[57] = &TestSuite::m_test_case_for_problem_57;
-    m_test_cases_dictionary[59] = &TestSuite::m_test_case_for_problem_59;    
+    m_test_cases_dictionary[59] = &TestSuite::m_test_case_for_problem_59;
+    m_test_cases_dictionary[64] = &TestSuite::m_test_case_for_problem_64;
     m_test_cases_dictionary[69] = &TestSuite::m_test_case_for_problem_69;
     m_test_cases_dictionary[70] = &TestSuite::m_test_case_for_problem_70;
     m_test_cases_dictionary[72] = &TestSuite::m_test_case_for_problem_72;
@@ -635,6 +636,15 @@ void pt::TestSuite::m_test_case_for_problem_59() {
     pp::Problem_59 problem;
     problem.sum_of_encrypted_message("../data/cipher.txt");
 
+    m_end_timer();
+}
+
+void pt::TestSuite::m_test_case_for_problem_64() {
+    m_start_timer();
+
+    m_test_case_banner(64);
+    pp::Problem_64 problem;
+    problem.count_continued_fractions_periods(10000);
     m_end_timer();
 }
 
