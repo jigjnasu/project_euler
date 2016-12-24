@@ -4,6 +4,7 @@
 
 /*
   This algorithm is based on Wikipedia algorithm to count continued fractions for any natural number S.
+  https://en.wikipedia.org/wiki/Methods_of_computing_square_roots
 
   m0    = 0
   d0    = 1
