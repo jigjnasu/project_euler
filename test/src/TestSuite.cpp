@@ -94,6 +94,7 @@ void pt::TestSuite::m_initialize_test_cases_dictionary() {
     m_test_cases_dictionary[69] = &TestSuite::m_test_case_for_problem_69;
     m_test_cases_dictionary[70] = &TestSuite::m_test_case_for_problem_70;
     m_test_cases_dictionary[72] = &TestSuite::m_test_case_for_problem_72;
+    m_test_cases_dictionary[80] = &TestSuite::m_test_case_for_problem_80;    
     m_test_cases_dictionary[92] = &TestSuite::m_test_case_for_problem_92;    
     m_test_cases_dictionary[97] = &TestSuite::m_test_case_for_problem_97;
     m_test_cases_dictionary[99] = &TestSuite::m_test_case_for_problem_99;
@@ -687,6 +688,16 @@ void pt::TestSuite::m_test_case_for_problem_72() {
     pp::Problem_72 problem;
     printf("Counting fractions based on Euler's totient function for [%d] == [%ld]\n", n, problem.counting_fractions(n));
 
+    m_end_timer();
+}
+
+void pt::TestSuite::m_test_case_for_problem_80() {
+    m_start_timer();
+    m_test_case_banner(80);
+
+    pp::Problem_80 problem;
+    problem.square_root_digital_expansion();
+    
     m_end_timer();
 }
 
