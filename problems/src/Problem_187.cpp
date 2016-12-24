@@ -16,7 +16,7 @@ pp::Problem_187::~Problem_187() {}
 
 int pp::Problem_187::semi_primes(std::size_t n) const {
     utility::maths::Maths<std::size_t> maths;
-    const std::vector<std::size_t> prime_numbers = maths.get_prime_numbers(n / 2);
+    const std::vector<std::size_t> prime_numbers = maths.prime_numbers(n / 2);
 
     int semi_prime_counter = m_square_factors(n, prime_numbers);
     semi_prime_counter += m_2_factors(n, prime_numbers);

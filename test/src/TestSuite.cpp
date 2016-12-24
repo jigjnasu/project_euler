@@ -90,7 +90,7 @@ void pt::TestSuite::m_initialize_test_cases_dictionary() {
     m_test_cases_dictionary[57] = &TestSuite::m_test_case_for_problem_57;
     m_test_cases_dictionary[59] = &TestSuite::m_test_case_for_problem_59;
     m_test_cases_dictionary[64] = &TestSuite::m_test_case_for_problem_64;
-    m_test_cases_dictionary[64] = &TestSuite::m_test_case_for_problem_65;    
+    m_test_cases_dictionary[65] = &TestSuite::m_test_case_for_problem_65;    
     m_test_cases_dictionary[69] = &TestSuite::m_test_case_for_problem_69;
     m_test_cases_dictionary[70] = &TestSuite::m_test_case_for_problem_70;
     m_test_cases_dictionary[72] = &TestSuite::m_test_case_for_problem_72;

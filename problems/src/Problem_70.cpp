@@ -27,7 +27,7 @@ pp::Problem_70::~Problem_70() {}
 
 void pp::Problem_70::totient_permutation() const {
     utility::maths::Maths<std::size_t> maths;
-    const std::vector<std::size_t> phi = maths.get_phi(limit);
+    const std::vector<std::size_t> phi = maths.phi(limit);
 
     double min = limit;
     std::size_t n = 0;
