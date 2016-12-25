@@ -26,12 +26,12 @@ int pp::Problem_80::m_square_root_sum(int n) const {
     if (maths.is_perfect_square(n))
         return 0;
 
-    int limit = 100;
+    // Take limit a bit higher for more precision
+    int limit = 102;
     const std::string number = maths.square_root(n, limit);
-    printf("n == [%2d] || size == [%lu] --> [%s]\n", n, number.size(), number.c_str());
     int sum = number[0] - '0';
-    for (std::size_t i = 2; i < number.size(); ++i)
+    for (int i = 2; i < limit - 1; ++i)
         sum += number[i] - '0';
-    
+
     return sum;
 }
