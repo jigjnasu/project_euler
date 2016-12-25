@@ -9,6 +9,9 @@ namespace project_euler {
             ~Problem_80();
 
             void square_root_digital_expansion() const;
+
+        private:
+            int m_square_root_sum(int n) const;
         };
     };
 };
