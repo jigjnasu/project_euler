@@ -45,7 +45,7 @@ void pp::Problem_24::m_print(const int (&V)[size]) const {
 }
 
 void pp::Problem_24::m_swap(int& A, int& B) const {
-    int T = A;
-    A = B;
-    B = T;    
+    A ^= B;
+    B ^= A;
+    A ^= B;
 }
