@@ -89,6 +89,7 @@ void pt::TestSuite::m_initialize_test_cases_dictionary() {
     m_test_cases_dictionary[56] = &TestSuite::m_test_case_for_problem_56;
     m_test_cases_dictionary[57] = &TestSuite::m_test_case_for_problem_57;
     m_test_cases_dictionary[59] = &TestSuite::m_test_case_for_problem_59;
+    m_test_cases_dictionary[63] = &TestSuite::m_test_case_for_problem_63;    
     m_test_cases_dictionary[64] = &TestSuite::m_test_case_for_problem_64;
     m_test_cases_dictionary[65] = &TestSuite::m_test_case_for_problem_65;    
     m_test_cases_dictionary[69] = &TestSuite::m_test_case_for_problem_69;
@@ -639,6 +640,15 @@ void pt::TestSuite::m_test_case_for_problem_59() {
     problem.sum_of_encrypted_message("../data/cipher.txt");
 
     m_end_timer();
+}
+
+void pt::TestSuite::m_test_case_for_problem_63() {
+    m_start_timer();
+
+    m_test_case_banner(63);
+    pp::Problem_63 problem;
+    problem.powerful_digit_counts();
+    m_end_timer();    
 }
 
 void pt::TestSuite::m_test_case_for_problem_64() {
