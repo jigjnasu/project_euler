@@ -5,6 +5,8 @@
  */
 
 #include "Problem_63.h"
+#include "Integer.h"
+#include "Maths.h"
 #include <cstdio>
 #include <cmath>
 
@@ -31,5 +33,30 @@ void pp::Problem_63::powerful_digit_counts() const {
 
     printf("---------------------------------------------\n");
     printf("Total number of powerful digit counts == [%d]\n", count);
-    printf("---------------------------------------------\n");    
+    printf("---------------------------------------------\n");
+
+    printf("Let's print all the numbers\n");
+    m_print_numbers();
+}
+
+void pp::Problem_63::m_print_numbers() const {
+    utility::maths::Maths<utility::integer::Integer> maths;
+    std::size_t exp = 1;
+    int count = 1;
+    while (exp < 22) {
+        utility::integer::Integer n(1);
+        while (1) {
+            const utility::integer::Integer number = maths.power(n, exp);
+            if (number.size() == exp) {
+                printf("[%3d] --> [%s] ^ [%lu] == [%s]\n",
+                       count, n.get().c_str(), exp, number.get().c_str());
+                ++count;
+            } else if (number.size() > exp){
+                break;
+            }
+            
+            n += 1;
+        }
+        ++exp;
+    }
 }

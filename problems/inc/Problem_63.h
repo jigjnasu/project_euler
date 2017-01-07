@@ -9,6 +9,9 @@ namespace project_euler {
             ~Problem_63();
 
             void powerful_digit_counts() const;
+
+        private:
+            void m_print_numbers() const;
         };
     };
 };
