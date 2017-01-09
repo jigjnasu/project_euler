@@ -32,9 +32,7 @@ void pp::Problem_73::counting_fractions() {
 
 void pp::Problem_73::m_counting_fractions(int a, int b, int c, int d, int n) {
     utility::maths::Maths<int> maths;
-    if (b + d > n) {
-        return;
-    } else {
+    if (b + d <= n) {
         int p = a + c;
         int q = b + d;
 
