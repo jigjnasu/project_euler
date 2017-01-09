@@ -8,7 +8,12 @@ namespace project_euler {
             Problem_73();
             ~Problem_73();
 
-            void counting_fractions() const;
+            void counting_fractions();
+
+        private:
+            int m_counter;
+            
+            void m_counting_fractions(int a, int b, int c, int d, int n);
         };
     };
 };
