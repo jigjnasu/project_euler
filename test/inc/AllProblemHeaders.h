@@ -58,6 +58,7 @@
 #include "Problem_65.h"
 #include "Problem_69.h"
 #include "Problem_70.h"
+#include "Problem_71.h"
 #include "Problem_72.h"
 #include "Problem_80.h"
 #include "Problem_92.h"
