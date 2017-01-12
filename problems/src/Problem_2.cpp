@@ -1,3 +1,9 @@
+/*
+  ProjectEuler.net
+  Problem 2 (Even Fibonacci numbers)
+  Rakesh Kumar, cpp.rakesh(at)gmail.com
+ */
+
 #include "Problem_2.h"
 
 namespace pp = project_euler::problems;
