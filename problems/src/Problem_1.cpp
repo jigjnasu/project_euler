@@ -1,3 +1,9 @@
+/*
+  ProjectEuler.net
+  Problem 1 Multiples of 3 and 5
+  Rakesh Kumar, cpp.rakesh(at)gmail.com
+ */
+
 #include "Problem_1.h"
 #include <cstdio>
 
