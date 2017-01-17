@@ -1,5 +1,5 @@
 #include "Problem_42.h"
-#include "SortedSearch.h"
+#include "BinarySearch.h"
 #include "String.h"
 #include <cstdio>
 #include <fstream>
@@ -12,7 +12,7 @@ pp::Problem_42::~Problem_42() {}
 
 void pp::Problem_42::count_coded_triangle_numbers(const std::string& file) const {
     int counter = 0;
-    utility::algorithms::search::SortedSearch<int> search;
+    utility::algorithms::search::BinarySearch<int> search;
     utility::string::String<int> string;
     std::vector<int> coded_triangle_numbers = m_coded_triangle_numbers();
     
