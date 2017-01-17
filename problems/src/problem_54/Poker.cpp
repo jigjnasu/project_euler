@@ -116,7 +116,7 @@ bool Poker::m_is_full_house(const std::vector<Card>& hands, int& max) {
     for (std::size_t i = 0; i < hands.size(); ++i)
         values.push_back(hands[i].Value());
 
-     utility::algorithms::sort::QuickSort<int> quick_sort;
+    utility::algorithms::sort::QuickSort<int> quick_sort;
     quick_sort.sort(values);
 
     // Case if AAABB
