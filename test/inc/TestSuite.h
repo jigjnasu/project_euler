@@ -24,6 +24,8 @@ namespace project_euler {
 
             typedef void (TestSuite::*ptrFunc)();
         private:
+            std::clock_t m_start_time;
+            int m_test_case;
             std::map<int, ptrFunc> m_test_cases_dictionary;
 
             void m_initialize_test_cases_dictionary();
@@ -32,7 +34,7 @@ namespace project_euler {
             void m_start_timer();
             void m_end_timer() const;
 
-            void m_test_case_banner(int test_case) const;
+            void m_test_case_banner() const;
 
             void m_test_case_for_problem_1();
             void m_test_case_for_problem_2();
@@ -102,8 +104,7 @@ namespace project_euler {
             void m_test_case_for_problem_125();
             void m_test_case_for_problem_187();
             void m_test_case_for_problem_214();
-                
-            std::clock_t m_start_time;
+            void m_test_case_for_problem_216();                
         };
     };
 };
