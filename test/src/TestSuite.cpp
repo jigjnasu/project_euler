@@ -103,7 +103,8 @@ void pt::TestSuite::m_initialize_test_cases_dictionary() {
     m_test_cases_dictionary[97] = &TestSuite::m_test_case_for_problem_97;
     m_test_cases_dictionary[99] = &TestSuite::m_test_case_for_problem_99;
     m_test_cases_dictionary[125] = &TestSuite::m_test_case_for_problem_125;
-    m_test_cases_dictionary[187] = &TestSuite::m_test_case_for_problem_187;    
+    m_test_cases_dictionary[187] = &TestSuite::m_test_case_for_problem_187;
+    m_test_cases_dictionary[214] = &TestSuite::m_test_case_for_problem_214;
 }
 
 void pt::TestSuite::m_execute(ptrFunc function) {
@@ -115,9 +116,9 @@ void pt::TestSuite::m_start_timer() {
 }
 
 void pt::TestSuite::m_end_timer() const {
-    printf("----------------------------------------------------------------------------------------\n");
+    printf("----------------------------------------------------------------------------\n");
     printf("Execution time == [%.8f] seconds\n", (clock() - m_start_time) / static_cast<double>(CLOCKS_PER_SEC));
-    printf("----------------------------------------------------------------------------------------\n");    
+    printf("----------------------------------------------------------------------------\n");    
 }
 
 void pt::TestSuite::m_test_case_banner(int test_case) const {
@@ -795,3 +796,12 @@ void pt::TestSuite::m_test_case_for_problem_187() {
     m_end_timer();
 }
 
+void pt::TestSuite::m_test_case_for_problem_214() {
+    m_start_timer();
+
+    m_test_case_banner(214);
+    pp::Problem_214 problem;
+    problem.totient_chains();
+
+    m_end_timer();
+}

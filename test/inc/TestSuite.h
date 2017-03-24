@@ -101,6 +101,7 @@ namespace project_euler {
             void m_test_case_for_problem_99();
             void m_test_case_for_problem_125();
             void m_test_case_for_problem_187();
+            void m_test_case_for_problem_214();
                 
             std::clock_t m_start_time;
         };
