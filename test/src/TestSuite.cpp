@@ -109,7 +109,6 @@ void pt::TestSuite::m_initialize_test_cases_dictionary() {
     m_test_cases_dictionary[125] = &TestSuite::m_test_case_for_problem_125;
     m_test_cases_dictionary[187] = &TestSuite::m_test_case_for_problem_187;
     m_test_cases_dictionary[214] = &TestSuite::m_test_case_for_problem_214;
-    m_test_cases_dictionary[216] = &TestSuite::m_test_case_for_problem_216;
 }
 
 void pt::TestSuite::m_execute(ptrFunc function) {
@@ -811,13 +810,4 @@ void pt::TestSuite::m_test_case_for_problem_214() {
     problem.totient_chains();
 
     m_end_timer();
-}
-
-void pt::TestSuite::m_test_case_for_problem_216() {
-    m_start_timer();
-
-    m_test_case_banner();
-    pp::Problem_216 problem;
-
-    m_end_timer();    
 }
