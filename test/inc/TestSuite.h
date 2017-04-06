@@ -50,6 +50,7 @@ namespace project_euler {
             void m_test_case_for_problem_12();
             void m_test_case_for_problem_13();
             void m_test_case_for_problem_14();
+            void m_test_case_for_problem_15();
             void m_test_case_for_problem_16();
             void m_test_case_for_problem_17();
             void m_test_case_for_problem_19();
