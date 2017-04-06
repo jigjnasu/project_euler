@@ -28,6 +28,7 @@
 #include "Problem_27.h"
 #include "Problem_29.h"
 #include "Problem_30.h"
+#include "Problem_31.h"
 #include "Problem_32.h"
 #include "Problem_33.h"
 #include "Problem_34.h"

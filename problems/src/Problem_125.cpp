@@ -13,8 +13,7 @@
 #include <vector>
 #include <sstream>
 
-typedef unsigned long long int u_long;
-const u_long max = 100000000;
+const unsigned long long int max = 100000000;
 
 namespace pp = project_euler::problems;
 
@@ -23,13 +22,13 @@ pp::Problem_125::Problem_125() {}
 pp::Problem_125::~Problem_125() {}
 
 void pp::Problem_125::palindromic_sums() const {
-    utility::common::Common<u_long> common;
+    utility::common::Common<unsigned long long int> common;
     const int limit = std::sqrt(max);
-    std::set<u_long> numbers;
-    u_long sum_of_numbers = 0;
+    std::set<unsigned long long int> numbers;
+    unsigned long long int sum_of_numbers = 0;
 
     for (int i = 1; i <= limit; ++i) {
-        u_long number = i * i;
+        unsigned long long int number = i * i;
         for (int j = i + 1; j <= limit; ++j) {
             number += j * j;
 
@@ -41,7 +40,7 @@ void pp::Problem_125::palindromic_sums() const {
         }
     }
 
-    for (std::set<u_long>::const_iterator it = numbers.begin();
+    for (std::set<unsigned long long int>::const_iterator it = numbers.begin();
          it != numbers.end(); ++it)
         sum_of_numbers += *it;
 	

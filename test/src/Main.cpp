@@ -11,7 +11,7 @@ void run_all_test_cases() {
 }
 
 int main() {
-    const int test_case = 297;
+    const int test_case = 31;
     run_a_test_case(test_case);
     
     //run_all_test_cases();

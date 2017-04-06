@@ -68,6 +68,7 @@ void pt::TestSuite::m_initialize_test_cases_dictionary() {
     m_test_cases_dictionary[27]  = &TestSuite::m_test_case_for_problem_27;
     m_test_cases_dictionary[29]  = &TestSuite::m_test_case_for_problem_29;
     m_test_cases_dictionary[30]  = &TestSuite::m_test_case_for_problem_30;
+    m_test_cases_dictionary[31]  = &TestSuite::m_test_case_for_problem_31;    
     m_test_cases_dictionary[32]  = &TestSuite::m_test_case_for_problem_32;    
     m_test_cases_dictionary[33]  = &TestSuite::m_test_case_for_problem_33;
     m_test_cases_dictionary[34]  = &TestSuite::m_test_case_for_problem_34;
@@ -399,6 +400,16 @@ void pt::TestSuite::m_test_case_for_problem_30() {
     m_test_case_banner();
     pp::Problem_30 problem;
     problem.digit_fifth_power();
+
+    m_end_timer();
+}
+
+void pt::TestSuite::m_test_case_for_problem_31() {
+    m_start_timer();
+
+    m_test_case_banner();
+    pp::Problem_31 problem;
+    problem.coin_sums();
 
     m_end_timer();
 }

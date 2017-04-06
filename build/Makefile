@@ -37,7 +37,7 @@ INCLUDES += $(UTILITY_PERMUTATIONS_INC)
 INCLUDES += $(PROBLEM_54_INC)
 INCLUDES += $(TEST_INC)
 
-GXX = g++
+GXX = g++ -std=c++11
 CCFLAGS = -g -c -Wall -O3
 
 LD := -lutility
