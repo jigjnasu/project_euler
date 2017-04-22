@@ -17,7 +17,7 @@ PROBLEM_54_SRC := $(wildcard ~/git_hub/ProjectEuler/problems/src/problem_54/*.cp
 OBJ_FILES += $(addprefix $(OBJ_PATH)/,$(notdir $(PROBLEM_54_SRC:.cpp=.o)))
 
 UTILITY_INTEGER_INC := -I ~/git_hub/Utility/integer/inc
-UTILITY_MATHS_INC := -I ~/git_hub/Utility/maths/inc
+UTILITY_MATHS_INC := -I ~/git_hub/Utility/maths/general/inc
 UTILITY_COMMON_INC := -I ~/git_hub/Utility/common/inc
 UTILITY_STRING_INC := -I ~/git_hub/Utility/string/inc
 UTILITY_ALGORITHMS_SEARCH_INC := -I ~/git_hub/Utility/algorithms/search/inc
