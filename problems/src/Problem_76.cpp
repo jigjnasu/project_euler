@@ -1,3 +1,9 @@
+/*
+  This is solution for problem 76 (Counting Sums) from ProjectEuler.net.
+  Author : Rakesh Kumar @ cpp.rakesh(at)gmail.com
+  Date : 24/04/2017
+*/
+
 #include "Problem_76.h"
 #include <cstdio>
 #include <vector>
