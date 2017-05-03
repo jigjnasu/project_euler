@@ -67,6 +67,7 @@ void pt::TestSuite::m_initialize_test_cases_dictionary() {
     m_test_cases_dictionary[25]  = &TestSuite::m_test_case_for_problem_25;
     m_test_cases_dictionary[26]  = &TestSuite::m_test_case_for_problem_26;    
     m_test_cases_dictionary[27]  = &TestSuite::m_test_case_for_problem_27;
+    m_test_cases_dictionary[28]  = &TestSuite::m_test_case_for_problem_28;    
     m_test_cases_dictionary[29]  = &TestSuite::m_test_case_for_problem_29;
     m_test_cases_dictionary[30]  = &TestSuite::m_test_case_for_problem_30;
     m_test_cases_dictionary[31]  = &TestSuite::m_test_case_for_problem_31;    
@@ -392,6 +393,16 @@ void pt::TestSuite::m_test_case_for_problem_27() {
     m_test_case_banner();
     pp::Problem_27 problem;
     problem.quadratic_primes();
+
+    m_end_timer();
+}
+
+void pt::TestSuite::m_test_case_for_problem_28() {
+    m_start_timer();
+
+    m_test_case_banner();
+    pp::Problem_28 problem;
+    problem.diagnols_sum();
 
     m_end_timer();
 }
