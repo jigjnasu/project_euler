@@ -90,7 +90,8 @@ void pt::TestSuite::m_initialize_test_cases_dictionary() {
     m_test_cases_dictionary[48]  = &TestSuite::m_test_case_for_problem_48;
     m_test_cases_dictionary[49]  = &TestSuite::m_test_case_for_problem_49;
     m_test_cases_dictionary[50]  = &TestSuite::m_test_case_for_problem_50;
-    m_test_cases_dictionary[52]  = &TestSuite::m_test_case_for_problem_52;    
+    m_test_cases_dictionary[52]  = &TestSuite::m_test_case_for_problem_52;
+    m_test_cases_dictionary[53]  = &TestSuite::m_test_case_for_problem_53;    
     m_test_cases_dictionary[54]  = &TestSuite::m_test_case_for_problem_54;
     m_test_cases_dictionary[55]  = &TestSuite::m_test_case_for_problem_55;
     m_test_cases_dictionary[56]  = &TestSuite::m_test_case_for_problem_56;
@@ -633,6 +634,17 @@ void pt::TestSuite::m_test_case_for_problem_52() {
     m_test_case_banner();
     pp::Problem_52 problem;
     problem.permutated_multiples();
+
+    m_end_timer();
+}
+
+
+void pt::TestSuite::m_test_case_for_problem_53() {
+    m_start_timer();
+
+    m_test_case_banner();
+    pp::Problem_53 problem;
+    problem.combinatronic_selection();
 
     m_end_timer();
 }
