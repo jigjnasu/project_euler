@@ -97,6 +97,7 @@ void pt::TestSuite::m_initialize_test_cases_dictionary() {
     m_test_cases_dictionary[55]  = &TestSuite::m_test_case_for_problem_55;
     m_test_cases_dictionary[56]  = &TestSuite::m_test_case_for_problem_56;
     m_test_cases_dictionary[57]  = &TestSuite::m_test_case_for_problem_57;
+    m_test_cases_dictionary[58]  = &TestSuite::m_test_case_for_problem_58;
     m_test_cases_dictionary[59]  = &TestSuite::m_test_case_for_problem_59;
     m_test_cases_dictionary[63]  = &TestSuite::m_test_case_for_problem_63;    
     m_test_cases_dictionary[64]  = &TestSuite::m_test_case_for_problem_64;
@@ -697,6 +698,16 @@ void pt::TestSuite::m_test_case_for_problem_57() {
     m_test_case_banner();
     pp::Problem_57 problem;
     problem.square_root_convergents();
+
+    m_end_timer();
+}
+
+void pt::TestSuite::m_test_case_for_problem_58() {
+    m_start_timer();
+
+    m_test_case_banner();
+    pp::Problem_58 problem;
+    problem.spiral_primes();
 
     m_end_timer();
 }

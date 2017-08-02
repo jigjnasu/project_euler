@@ -57,6 +57,7 @@
 #include "Problem_55.h"
 #include "Problem_56.h"
 #include "Problem_57.h"
+#include "Problem_58.h"
 #include "Problem_59.h"
 #include "Problem_63.h"
 #include "Problem_64.h"
