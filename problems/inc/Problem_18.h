@@ -8,8 +8,6 @@
 #ifndef PROJECT_EULER_PROBLEMS_PROBLEM_18_H_
 #define PROJECT_EULER_PROBLEMS_PROBLEM_18_H_
 
-#include <vector>
-
 namespace project_euler {
     namespace problems {
         class Problem_18 {

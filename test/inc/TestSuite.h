@@ -95,7 +95,8 @@ namespace project_euler {
             void m_test_case_for_problem_59();
             void m_test_case_for_problem_63();            
             void m_test_case_for_problem_64();
-            void m_test_case_for_problem_65();            
+            void m_test_case_for_problem_65();
+            void m_test_case_for_problem_67();            
             void m_test_case_for_problem_69();
             void m_test_case_for_problem_70();
             void m_test_case_for_problem_71();            

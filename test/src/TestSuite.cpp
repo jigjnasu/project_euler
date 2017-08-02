@@ -100,7 +100,8 @@ void pt::TestSuite::m_initialize_test_cases_dictionary() {
     m_test_cases_dictionary[59]  = &TestSuite::m_test_case_for_problem_59;
     m_test_cases_dictionary[63]  = &TestSuite::m_test_case_for_problem_63;    
     m_test_cases_dictionary[64]  = &TestSuite::m_test_case_for_problem_64;
-    m_test_cases_dictionary[65]  = &TestSuite::m_test_case_for_problem_65;    
+    m_test_cases_dictionary[65]  = &TestSuite::m_test_case_for_problem_65;
+    m_test_cases_dictionary[67]  = &TestSuite::m_test_case_for_problem_67;
     m_test_cases_dictionary[69]  = &TestSuite::m_test_case_for_problem_69;
     m_test_cases_dictionary[70]  = &TestSuite::m_test_case_for_problem_70;
     m_test_cases_dictionary[71]  = &TestSuite::m_test_case_for_problem_71;    
@@ -734,6 +735,15 @@ void pt::TestSuite::m_test_case_for_problem_65() {
     m_test_case_banner();
     pp::Problem_65 problem;
     problem.convergents_of_e();
+    m_end_timer();
+}
+
+void pt::TestSuite::m_test_case_for_problem_67() {
+    m_start_timer();
+
+    m_test_case_banner();
+    pp::Problem_67 problem;
+    problem.max_path();
     m_end_timer();
 }
 
