@@ -13,12 +13,12 @@
 
 // Constants for ranks
 const int ROYAL_FLUSH_RANK 		= 1;
-const int STRAIGHT_FLUSH_RANK	= 2;
-const int FOUR_OF_A_KIND_RANK	= 3;
+const int STRAIGHT_FLUSH_RANK	        = 2;
+const int FOUR_OF_A_KIND_RANK	        = 3;
 const int FULL_HOUSE_RANK		= 4;
 const int FLUSH_RANK		  	= 5;
 const int STRAIGHT_RANK			= 6;
-const int THREE_OF_A_KIND_RANK	= 7;
+const int THREE_OF_A_KIND_RANK	        = 7;
 const int TWO_PAIRS_RANK		= 8;
 const int ONE_PAIR_RANK			= 9;
 const int HIGH_CARD_RANK		= 10;
