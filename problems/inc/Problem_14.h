@@ -11,7 +11,7 @@ namespace project_euler {
             ~Problem_14();
 
             void collatz_sequence() const;
-            
+
         private:
             int m_sequence_chain(u_l n) const;
         };

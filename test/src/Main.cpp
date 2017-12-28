@@ -11,10 +11,10 @@ void run_all_test_cases() {
 }
 
 int main() {
-    const int test_case = 60;
+    const int test_case = 145;
     run_a_test_case(test_case);
-    
+
     //run_all_test_cases();
-    
+
     return 0;
 }

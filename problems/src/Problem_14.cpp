@@ -12,7 +12,7 @@ void pp::Problem_14::collatz_sequence() const {
     int longest_chain = 0;
     for (u_l i = 2; i < 1000000; ++i) {
         const int sequence = m_sequence_chain(i);
-      
+
         if (sequence > longest_chain) {
             longest_chain = sequence;
             number = i;
@@ -32,5 +32,5 @@ int pp::Problem_14::m_sequence_chain(u_l n) const {
             n /= 2;
     }
 
-    return counter;    
+    return counter;
 }
