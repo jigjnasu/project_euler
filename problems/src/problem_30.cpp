@@ -1,5 +1,5 @@
-#include "Problem_30.h"
-#include "Maths.h"
+#include "problem_30.h"
+#include "maths.h"
 #include <cstdio>
 
 namespace pp = project_euler::problems;
@@ -13,7 +13,7 @@ void pp::Problem_30::digit_fifth_power() const {
     for (int i = 2; i <= 1000000; ++i)
         if (m_is_digit_fifth_power(i))
             sum += i;
-    printf("Sum of digit of fifth powers == [%d]\n", sum);    
+    printf("Sum of digit of fifth powers == [%d]\n", sum);
 }
 
 bool pp::Problem_30::m_is_digit_fifth_power(int n) const {
@@ -29,6 +29,6 @@ bool pp::Problem_30::m_is_digit_fifth_power(int n) const {
 
     if (n != sum)
         return false;
-	
-    return true;    
+
+    return true;
 }

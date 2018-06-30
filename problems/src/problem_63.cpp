@@ -4,15 +4,14 @@
   Date: 7th, Jan 2017
  */
 
-#include "Problem_63.h"
-#include "Integer.h"
-#include "Maths.h"
+#include "problem_63.h"
+#include "integer.h"
+#include "maths.h"
 #include <cstdio>
 #include <cmath>
 
 /*
   Maths explanasion behind this problem
-  
  */
 
 namespace pp = project_euler::problems;
@@ -54,7 +53,7 @@ void pp::Problem_63::m_print_numbers() const {
             } else if (number.size() > exp){
                 break;
             }
-            
+
             n += 1;
         }
         ++exp;

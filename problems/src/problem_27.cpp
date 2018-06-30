@@ -4,8 +4,8 @@
   Date : May 12th, 2016
 */
 
-#include "Problem_27.h"
-#include "Maths.h"
+#include "problem_27.h"
+#include "maths.h"
 #include <cstdio>
 
 namespace pp = project_euler::problems;
@@ -33,9 +33,9 @@ void pp::Problem_27::quadratic_primes() const {
         }
     }
 
-    printf("product of a and b == [%d]\n", largest_a * largest_b);    
+    printf("product of a and b == [%d]\n", largest_a * largest_b);
 }
 
 int pp::Problem_27::m_quadratic_prime(int a, int b, int n) const {
-    return std::abs((n * n) + (a * n) + b);    
+    return std::abs((n * n) + (a * n) + b);
 }

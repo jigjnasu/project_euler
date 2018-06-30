@@ -1,4 +1,4 @@
-#include "Problem_6.h"
+#include "problem_6.h"
 #include <cstdio>
 
 namespace pp = project_euler::problems;
@@ -12,5 +12,4 @@ void pp::Problem_6::sum_of_squares(int n) const {
     const int S2 = (n * (n + 1) * ((2 * n) + 1)) / 6;
 
     printf("Sum of squares series till [%d] == [%d]\n", n, (S1 * S1) - S2);
-    
 }

@@ -1,4 +1,4 @@
-#include "Problem_64.h"
+#include "problem_64.h"
 #include <cmath>
 #include <cstdio>
 
@@ -40,7 +40,7 @@ int pp::Problem_64::m_length_of_contined_fractions(int s) const {
     const int a0 = static_cast<int>(std::sqrt(s));
     if ((a0 * a0) == s)
         return 0;
-    
+
     int count = 0;
     int m = 0;
     int d = 1;
@@ -53,5 +53,5 @@ int pp::Problem_64::m_length_of_contined_fractions(int s) const {
         ++count;
     }
 
-    return count;    
+    return count;
 }

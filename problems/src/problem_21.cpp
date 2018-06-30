@@ -1,4 +1,4 @@
-#include "Problem_21.h"
+#include "problem_21.h"
 #include <cstdio>
 
 namespace pp = project_euler::problems;

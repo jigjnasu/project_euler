@@ -1,4 +1,4 @@
-#include "Problem_11.h"
+#include "problem_11.h"
 #include <cstdio>
 #include <fstream>
 #include <vector>
@@ -14,7 +14,7 @@ void pp::Problem_11::largest_product(const std::string& file) const {
   std::vector<std::vector<int> > grid;
   int product = 0;
   std::fstream ifs(file.c_str());
-  
+
   if (ifs.is_open()) {
     for (int i = 0; i < 20; ++i) {
       std::string line;

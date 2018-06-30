@@ -4,7 +4,7 @@
   Date: Dec 4th, 2016
  */
 
-#include "Problem_97.h"
+#include "problem_97.h"
 #include <cstdio>
 
 namespace pp = project_euler::problems;
@@ -36,7 +36,7 @@ void pp::Problem_97::large_prime() {
 void pp::Problem_97::m_multiply(std::string& x, int y) {
     std::size_t iter = 0;
     int carry = 0;
-    
+
     while (iter < x.size()) {
         const int value = carry + ((x[iter] - '0') * y);
         x[iter] = (value % 10) + '0';

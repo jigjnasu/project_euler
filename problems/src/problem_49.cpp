@@ -4,10 +4,10 @@
   Date : May 12th, 2016
 */
 
-#include "Problem_49.h"
-#include "QuickSort.h"
-#include "Maths.h"
-#include "Common.h"
+#include "problem_49.h"
+#include "quick_sort.h"
+#include "maths.h"
+#include "common.h"
 #include <cstdio>
 
 namespace pp = project_euler::problems;
@@ -39,7 +39,7 @@ void pp::Problem_49::prime_permutations() const {
                 }
             }
         }
-    }    
+    }
 }
 
 bool pp::Problem_49::m_is_permutation(std::string a, std::string b, std::string c) const {

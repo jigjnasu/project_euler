@@ -5,7 +5,7 @@
   Date: June 26th, 2016
 */
 
-#include "Card.h"
+#include "card.h"
 
 Card::Card() : m_type(' '), m_value(0) {}
 

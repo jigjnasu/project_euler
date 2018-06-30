@@ -1,6 +1,6 @@
-#include "Problem_41.h"
-#include "PermutationGenerator.h"
-#include "Maths.h"
+#include "problem_41.h"
+#include "permutation_generator.h"
+#include "maths.h"
 #include <cstdio>
 
 namespace pp = project_euler::problems;
@@ -18,7 +18,7 @@ void pp::Problem_41::pandigital_prime() const {
 
     utility::maths::Maths<std::size_t> math;
     int largest_prime_number = 0;
-    
+
     for (std::size_t i = 0; i < permutations.size(); ++i)
         if (math.is_prime(permutations[i]))
             if (permutations[i] > largest_prime_number)

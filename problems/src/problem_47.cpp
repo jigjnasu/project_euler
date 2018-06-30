@@ -4,8 +4,8 @@
   Date : May 12th, 2016
 */
 
-#include "Problem_47.h"
-#include "Maths.h"
+#include "problem_47.h"
+#include "maths.h"
 #include <cstdio>
 #include <algorithm>
 
@@ -21,20 +21,20 @@ void pp::Problem_47::distinct_prime_factors() const {
     std::vector<int> factor_b;
     std::vector<int> factor_c;
     std::vector<int> prime_numbers;
-	
+
     int i = 2;
     for (int i = 2; i <= 4; ++i)
         if (math.is_prime(i))
             prime_numbers.push_back(i);
-    
+
     factor_a = m_factors(i, prime_numbers);
     factor_b = m_factors(i + 1, prime_numbers);
     factor_c = m_factors(i + 2, prime_numbers);
-    
+
     i = i + 3;
     while (1) {
         std::vector<int> factor_d;
-		
+
         if (math.is_prime(i))
             prime_numbers.push_back(i);
 
@@ -53,11 +53,11 @@ void pp::Problem_47::distinct_prime_factors() const {
             m_print(i, factor_d);
             break;
         }
-        
+
         factor_a = factor_b;
         factor_b = factor_c;
         factor_c = factor_d;
-		
+
         ++i;
     }
 }
@@ -96,7 +96,7 @@ bool pp::Problem_47::m_is_distinct_factor(const std::vector<int>& factors) const
         }
     }
 
-    return true;    
+    return true;
 }
 
 void pp::Problem_47::m_print(int n, const std::vector<int>& factors) const {

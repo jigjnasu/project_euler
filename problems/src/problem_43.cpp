@@ -1,7 +1,7 @@
 
-#include "Problem_43.h"
-#include "Integer.h"
-#include "PermutationGenerator.h"
+#include "problem_43.h"
+#include "integer.h"
+#include "permutation_generator.h"
 #include <vector>
 #include <cstdio>
 #include <cstdlib>
@@ -22,10 +22,10 @@ void pp::Problem_43::sub_string_divisiblity() const {
     for (std::size_t i = 0; i < permutations.size(); ++i)
         if (m_is_sub_string_divisible(permutations[i]))
             sum += permutations[i];
-        
+
     printf("Sum of all sub string divisibles === ");
     sum.print();
-    printf("\n");    
+    printf("\n");
 }
 
 bool pp::Problem_43::m_is_sub_string_divisible(const std::string& number) const {
@@ -37,5 +37,5 @@ bool pp::Problem_43::m_is_sub_string_divisible(const std::string& number) const 
         std::atoi(number.substr(6, 3).c_str()) % 13 ||
         std::atoi(number.substr(7, 3).c_str()) % 17)
         return false;
-    return true;    
+    return true;
 }

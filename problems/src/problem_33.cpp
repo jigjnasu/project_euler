@@ -4,8 +4,8 @@
   Date : May 18th, 2016
 */
 
-#include "Problem_33.h"
-#include "Maths.h"
+#include "problem_33.h"
+#include "maths.h"
 #include <cstdio>
 
 namespace pp = project_euler::problems;
@@ -27,7 +27,7 @@ void pp::Problem_33::digit_cancelling_fractions() const {
     }
 
     utility::maths::Maths<int> math;
-    printf("The GCD value of denominator == [%d]\n", den_product / math.gcd(num_product, den_product));    
+    printf("The GCD value of denominator == [%d]\n", den_product / math.gcd(num_product, den_product));
 }
 
 bool pp::Problem_33::m_is_cancelling_fractions(int n, int d) const {
@@ -50,5 +50,5 @@ bool pp::Problem_33::m_is_cancelling_fractions(int n, int d) const {
     if (N[1] == D[1])
         return n / static_cast<double>(d) == N[0] / static_cast<double>(D[0]);
 
-    return false;    
+    return false;
 }

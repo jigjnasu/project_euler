@@ -4,8 +4,8 @@
   Date: Dec 16th, 2016
  */
 
-#include "Problem_57.h"
-#include "Integer.h"
+#include "problem_57.h"
+#include "integer.h"
 #include <cstdio>
 
 namespace pp = project_euler::problems;
@@ -22,10 +22,10 @@ void pp::Problem_57::square_root_convergents() const {
     int count = 0;
     while (i < 1000) {
         if (N.size() > D.size())
-            ++count;            
-        
+            ++count;
+
         const utility::integer::Integer T = N;
-        
+
         N += D * 2;
         D += T;
 
@@ -34,5 +34,5 @@ void pp::Problem_57::square_root_convergents() const {
 
     printf("------------------------------------------------------------------\n");
     printf("Square convergents till 1000 have [%d] numerator size more than denominator\n", count);
-    printf("------------------------------------------------------------------\n");    
+    printf("------------------------------------------------------------------\n");
 }

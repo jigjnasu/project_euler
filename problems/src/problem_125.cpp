@@ -4,8 +4,8 @@
   Date : June 3rd, 2016
 */
 
-#include "Problem_125.h"
-#include "Common.h"
+#include "problem_125.h"
+#include "common.h"
 #include <cstdio>
 #include <set>
 #include <cmath>
@@ -43,8 +43,8 @@ void pp::Problem_125::palindromic_sums() const {
     for (std::set<unsigned long long int>::const_iterator it = numbers.begin();
          it != numbers.end(); ++it)
         sum_of_numbers += *it;
-	
+
     printf("--------------------------------------------------------\n");
     printf("Sum of all numbers below 10 ^ 8 == [%llu]\n", sum_of_numbers);
-    printf("--------------------------------------------------------\n");    
+    printf("--------------------------------------------------------\n");
 }

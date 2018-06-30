@@ -1,5 +1,5 @@
-#include "Problem_4.h"
-#include "Common.h"
+#include "problem_4.h"
+#include "common.h"
 #include <cstdio>
 
 namespace pp = project_euler::problems;

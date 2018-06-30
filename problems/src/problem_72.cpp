@@ -4,7 +4,7 @@
   Date: Dec 3rd, 2016
  */
 
-#include "Problem_72.h"
+#include "problem_72.h"
 #include <vector>
 
 namespace pp = project_euler::problems;

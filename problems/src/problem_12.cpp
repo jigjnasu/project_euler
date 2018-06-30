@@ -1,4 +1,4 @@
-#include "Problem_12.h"
+#include "problem_12.h"
 #include <cstdio>
 #include <cmath>
 
@@ -11,7 +11,7 @@ pp::Problem_12::~Problem_12() {}
 void pp::Problem_12::max_divisible_triangular_number() const {
   int iter = 1;
   u_l number = 0;
-  
+
   while (1) {
     number += iter;
     ++iter;

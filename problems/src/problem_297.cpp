@@ -1,4 +1,4 @@
-#include "Problem_297.h"
+#include "problem_297.h"
 #include <cstdio>
 
 //const std::size_t limit = 100000000000000000;
@@ -13,7 +13,7 @@ project_euler::problems::Problem_297::~Problem_297() {}
 
 void project_euler::problems::Problem_297::zeckendorf() {
     std::size_t total = 0;
-    
+
     for (std::size_t n = 1; n < limit; ++n) {
         //const int t = m_zeckendorf(n);
         total += m_zeckendorf(n);
@@ -32,8 +32,8 @@ void project_euler::problems::Problem_297::m_fibonacci() {
 
     m_fibonacci_numbers.push_back(A);
     m_fibonacci_numbers.push_back(B);
-    m_fibonacci_numbers.push_back(C);    
-    
+    m_fibonacci_numbers.push_back(C);
+
     while (1) {
         A = B;
         B = C;
@@ -45,7 +45,7 @@ void project_euler::problems::Problem_297::m_fibonacci() {
 }
 
 std::size_t project_euler::problems::Problem_297::m_find(std::size_t n) {
-    std::size_t i = m_fibonacci_numbers.size() - 1; 
+    std::size_t i = m_fibonacci_numbers.size() - 1;
 
     while (m_fibonacci_numbers[i--] > n);
     return m_fibonacci_numbers[++i];
@@ -53,7 +53,7 @@ std::size_t project_euler::problems::Problem_297::m_find(std::size_t n) {
 
 std::size_t project_euler::problems::Problem_297::m_zeckendorf(std::size_t n) {
     std::size_t counter = 0;
-    
+
     while (n) {
         n -= m_find(n);
         ++counter;

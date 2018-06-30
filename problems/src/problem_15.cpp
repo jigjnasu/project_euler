@@ -1,5 +1,5 @@
-#include "Problem_15.h"
-#include "Maths.h"
+#include "problem_15.h"
+#include "maths.h"
 
 project_euler::problems::Problem_15::Problem_15() {}
 
@@ -13,5 +13,5 @@ void project_euler::problems::Problem_15::lattice_paths() const {
     const int k = 20;
     utility::maths::Maths<double> maths;
     printf("Exact routes for 20 X 20 grid == [%.0lf]\n", maths.binomial(n, k));
-    printf("-------------------------------------------\n");    
+    printf("-------------------------------------------\n");
 }

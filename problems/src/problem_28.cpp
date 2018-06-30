@@ -1,4 +1,4 @@
-#include "Problem_28.h"
+#include "problem_28.h"
 #include <cstdio>
 
 project_euler::problems::Problem_28::Problem_28() {}
@@ -17,10 +17,10 @@ void project_euler::problems::Problem_28::diagnols_sum() const {
             if (diagnol > n * n) {
                 printf("-----------------------------------------------\n");
                 printf("Sum of diagnols of [%d] X [%d] spiral == [%d]\n", n, n, sum);
-                printf("-----------------------------------------------\n");                
+                printf("-----------------------------------------------\n");
                 return;
             }
-            
+
             sum += diagnol;
         }
         ++i;

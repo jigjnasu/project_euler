@@ -1,5 +1,5 @@
-#include "Problem_13.h"
-#include "Integer.h"
+#include "problem_13.h"
+#include "integer.h"
 #include <cstdio>
 #include <fstream>
 
@@ -13,13 +13,13 @@ void pp::Problem_13::large_sum(const std::string& file) const {
     utility::integer::Integer sum(0);
     std::fstream ifs(file.c_str());
     if (ifs.is_open()) {
-	std::string line;
-	while (std::getline(ifs, line))
-	    sum += line;
+        std::string line;
+        while (std::getline(ifs, line))
+            sum += line;
 
-	sum.print();
-	ifs.close();
+        sum.print();
+        ifs.close();
     } else {
-	printf("There is an error while %s opening the file\n", file.c_str());
+        printf("There is an error while %s opening the file\n", file.c_str());
     }
 }

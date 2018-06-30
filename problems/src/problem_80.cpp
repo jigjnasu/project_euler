@@ -1,6 +1,6 @@
-#include "Problem_80.h"
-#include "Maths.h"
-#include "Integer.h"
+#include "problem_80.h"
+#include "maths.h"
+#include "integer.h"
 #include <string>
 #include <cstdio>
 
@@ -15,10 +15,10 @@ void pp::Problem_80::square_root_digital_expansion() const {
     int sum = 0;
     for (int n = 2; n < 100; ++n)
         sum += m_square_root_sum(n);
-    
+
     printf("-----------------------------------------------------------------------\n");
     printf("Total sum of all digits of square root of irrational numbers == [%d]\n", sum);
-    printf("-----------------------------------------------------------------------\n");    
+    printf("-----------------------------------------------------------------------\n");
 }
 
 int pp::Problem_80::m_square_root_sum(int n) const {

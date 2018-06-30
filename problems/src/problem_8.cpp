@@ -1,4 +1,4 @@
-#include "Problem_8.h"
+#include "problem_8.h"
 #include <cstdio>
 #include <fstream>
 #include <cstdlib>
@@ -34,5 +34,5 @@ void pp::Problem_8::series_product(const std::string& file) const {
             product = P;
     }
 
-    printf("largest sequence product == [%llu]\n", product);    
+    printf("largest sequence product == [%llu]\n", product);
 }

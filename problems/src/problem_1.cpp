@@ -4,7 +4,7 @@
   Rakesh Kumar, cpp.rakesh(at)gmail.com
  */
 
-#include "Problem_1.h"
+#include "problem_1.h"
 #include <cstdio>
 
 namespace pp = project_euler::problems;
@@ -18,5 +18,5 @@ int pp::Problem_1::sum(int i, int n) const {
     int l = (n % i == 0) ? n : n - (n % i);
     int k = l / a;
 
-    return (k * (a + l)) >> 1;    
+    return (k * (a + l)) >> 1;
 }

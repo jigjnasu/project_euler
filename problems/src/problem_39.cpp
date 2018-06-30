@@ -4,7 +4,7 @@
   Date : May 12th, 2016
 */
 
-#include "Problem_39.h"
+#include "problem_39.h"
 #include <cstdio>
 
 namespace pp = project_euler::problems;
@@ -31,5 +31,5 @@ void pp::Problem_39::integer_right_triangles() const {
         }
     }
 
-    printf("Max p with right angled triangles == [%d]\n", max_p);    
+    printf("Max p with right angled triangles == [%d]\n", max_p);
 }

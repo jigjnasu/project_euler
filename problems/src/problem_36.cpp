@@ -1,5 +1,5 @@
-#include "Problem_36.h"
-#include "Common.h"
+#include "problem_36.h"
+#include "common.h"
 #include <cstdio>
 #include <string>
 
@@ -19,5 +19,5 @@ void pp::Problem_36::double_base_palindromes() const {
         if (common.is_palindrome(common.to_binary(i)) &&
             common.is_palindrome(common.to_string(i)))
             sum += i;
-    printf("Sum of all binary and decimal numbers under million == [%d]\n", sum);        
+    printf("Sum of all binary and decimal numbers under million == [%d]\n", sum);
 }

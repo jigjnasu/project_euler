@@ -4,9 +4,9 @@
   Date : May 13th, 2016
 */
 
-#include "Problem_52.h"
-#include "QuickSort.h"
-#include "Common.h"
+#include "problem_52.h"
+#include "quick_sort.h"
+#include "common.h"
 #include <cstdio>
 
 namespace pp = project_euler::problems;
@@ -18,14 +18,14 @@ pp::Problem_52::~Problem_52() {}
 void pp::Problem_52::permutated_multiples() const {
     int i = 2;
     utility::common::Common<int> common;
-    
+
     while (!m_all_permutated(common.to_string(i * 1),
                              common.to_string(i * 2),
                              common.to_string(i * 3),
                              common.to_string(i * 4),
                              common.to_string(i * 5),
                              common.to_string(i * 6))) {
-        ++i; 
+        ++i;
     }
 
     printf("1 * %d == [%d]\n", i, i * 1);

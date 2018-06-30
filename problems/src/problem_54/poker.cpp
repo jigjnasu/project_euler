@@ -5,20 +5,20 @@
   Date: June 26th, 2016
 */
 
-#include "Poker.h"
-#include "QuickSort.h"
+#include "poker.h"
+#include "quick_sort.h"
 #include <cstdio>
 #include <string>
 #include <vector>
 
 // Constants for ranks
 const int ROYAL_FLUSH_RANK 		= 1;
-const int STRAIGHT_FLUSH_RANK	        = 2;
-const int FOUR_OF_A_KIND_RANK	        = 3;
+const int STRAIGHT_FLUSH_RANK	= 2;
+const int FOUR_OF_A_KIND_RANK	= 3;
 const int FULL_HOUSE_RANK		= 4;
 const int FLUSH_RANK		  	= 5;
 const int STRAIGHT_RANK			= 6;
-const int THREE_OF_A_KIND_RANK	        = 7;
+const int THREE_OF_A_KIND_RANK	= 7;
 const int TWO_PAIRS_RANK		= 8;
 const int ONE_PAIR_RANK			= 9;
 const int HIGH_CARD_RANK		= 10;
@@ -31,7 +31,7 @@ int Poker::Winner(const std::vector<Card>& A, const std::vector<Card>& B) {
     int winner = 1;
     int max_player_1 = 0;
     int max_player_2 = 0;
-	
+
     const int player_1_rank = m_get_rank(A, max_player_1);
     const int player_2_rank = m_get_rank(B, max_player_2);
 
@@ -46,31 +46,31 @@ int Poker::Winner(const std::vector<Card>& A, const std::vector<Card>& B) {
         winner = 2;
     }
 
-    return winner;	
+    return winner;
 }
 
 bool Poker::m_is_royal_flush(const std::vector<Card>& hands, int& max) {
     if (false == m_is_same_suit(hands))
         return false;
-	
+
     std::vector<int> values;
     for (std::size_t i = 0; i < hands.size(); ++i)
         values.push_back(hands[i].Value());
 
     utility::algorithms::sort::QuickSort<int> quick_sort;
     quick_sort.sort(values);
-	
+
     for (std::size_t i = 0; i < values.size(); ++i)
         if (static_cast<std::size_t>(values[i]) != i + 10)
             return false;
 
-    return true;	
+    return true;
 }
 
 bool Poker::m_is_straight_flush(const std::vector<Card>& hands, int& max) {
     if (false == m_is_same_suit(hands))
         return false;
-	
+
     std::vector<int> values;
     for (std::size_t i = 0; i < hands.size(); ++i)
         values.push_back(hands[i].Value());
@@ -108,7 +108,7 @@ bool Poker::m_is_four_of_a_kind(const std::vector<Card>& hands, int& max) {
         return true;
     }
 
-    return false;	
+    return false;
 }
 
 bool Poker::m_is_full_house(const std::vector<Card>& hands, int& max) {
@@ -135,11 +135,11 @@ bool Poker::m_is_full_house(const std::vector<Card>& hands, int& max) {
         return true;
     }
 
-    return false;	
+    return false;
 }
 
 bool Poker::m_is_flush(const std::vector<Card>& hands, int& max) {
-    return m_is_same_suit(hands);	
+    return m_is_same_suit(hands);
 }
 
 bool Poker::m_is_straight(const std::vector<Card>& hands, int& max) {
@@ -155,7 +155,7 @@ bool Poker::m_is_straight(const std::vector<Card>& hands, int& max) {
             return false;
 
     max = values[4];
-    return true;	
+    return true;
 }
 
 bool Poker::m_is_three_of_a_kind(const std::vector<Card>& hands, int& max) {
@@ -165,7 +165,7 @@ bool Poker::m_is_three_of_a_kind(const std::vector<Card>& hands, int& max) {
 
     utility::algorithms::sort::QuickSort<int> quick_sort;
     quick_sort.sort(values);
-	
+
     // Case if AAABC
     if (values[0] == values[1] && values[0] == values[2]) {
         max = values[0];
@@ -183,8 +183,8 @@ bool Poker::m_is_three_of_a_kind(const std::vector<Card>& hands, int& max) {
         max = values[2];
         return true;
     }
-	
-    return false;	
+
+    return false;
 }
 
 bool Poker::m_is_two_pairs(const std::vector<Card>& hands, int& max) {
@@ -213,7 +213,7 @@ bool Poker::m_is_two_pairs(const std::vector<Card>& hands, int& max) {
         return true;
     }
 
-    return false;	
+    return false;
 }
 
 bool Poker::m_is_one_pair(const std::vector<Card>& hands, int& max) {
@@ -231,7 +231,7 @@ bool Poker::m_is_one_pair(const std::vector<Card>& hands, int& max) {
         }
     }
 
-    return false;	
+    return false;
 }
 
 int Poker::m_find_max_value(const std::vector<Card>& hands, const int& index) {
@@ -242,7 +242,7 @@ int Poker::m_find_max_value(const std::vector<Card>& hands, const int& index) {
     utility::algorithms::sort::QuickSort<int> quick_sort;
     quick_sort.sort(values);
 
-    return values[4 - index];	
+    return values[4 - index];
 }
 
 int Poker::m_find_max_winner(const std::vector<Card>& A, const std::vector<Card>& B) {
@@ -250,20 +250,20 @@ int Poker::m_find_max_winner(const std::vector<Card>& A, const std::vector<Card>
     for (int i = 0; i < 4; ++i) {
         const int player_1_max = m_find_max_value(A, i);
         const int player_2_max = m_find_max_value(B, i);
-		
+
         if (player_1_max != player_2_max) {
             if (player_2_max > player_1_max)
                 winner = 2;
             break;
         }
     }
-	
-    return winner;	
+
+    return winner;
 }
 
 int Poker::m_get_rank(const std::vector<Card>& hands, int& max) {
     int rank = HIGH_CARD_RANK;
-	
+
     if (m_is_royal_flush(hands, max))
         rank = ROYAL_FLUSH_RANK;
     else if (m_is_straight_flush(hands, max))
@@ -283,7 +283,7 @@ int Poker::m_get_rank(const std::vector<Card>& hands, int& max) {
     else if (m_is_one_pair(hands, max))
         rank = ONE_PAIR_RANK;
 
-    return rank;	
+    return rank;
 }
 
 bool Poker::m_is_same_suit(const std::vector<Card>& hands) {
@@ -292,6 +292,6 @@ bool Poker::m_is_same_suit(const std::vector<Card>& hands) {
         hands[0].Type() != hands[3].Type() ||
         hands[0].Type() != hands[4].Type())
         return false;
-	
-    return true;	
+
+    return true;
 }

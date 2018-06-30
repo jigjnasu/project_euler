@@ -4,8 +4,8 @@
   Date : May 12th, 2016
 */
 
-#include "Problem_46.h"
-#include "Maths.h"
+#include "problem_46.h"
+#include "maths.h"
 #include <cstdio>
 
 namespace pp = project_euler::problems;
@@ -31,7 +31,7 @@ void pp::Problem_46::goldbach_conjecture() const {
             }
         }
         ++number;
-    }    
+    }
 }
 
 bool pp::Problem_46::m_is_goldbach_conjecture(int n, const std::vector<int>& prime_numbers) const {
@@ -46,9 +46,9 @@ bool pp::Problem_46::m_is_goldbach_conjecture(int n, const std::vector<int>& pri
                 break;
             ++power;
         }
-		
+
         ++prime_iter;
     }
 
-    return false;    
+    return false;
 }

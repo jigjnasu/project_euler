@@ -4,7 +4,7 @@
   Date : Oct 26th, 2016
  */
 
-#include "Problem_59.h"
+#include "problem_59.h"
 #include <cstdio>
 #include <cstdlib>
 #include <fstream>
@@ -33,7 +33,7 @@ void pp::Problem_59::sum_of_encrypted_message(const std::string& file) const {
 
     printf("-----------------------------------------------------------------------------\n");
     printf("Sum of the decrypted message == [%d] with key == [%s]\n", m_encrypt_decrypt(key, message), key.c_str());
-    printf("-----------------------------------------------------------------------------\n");    
+    printf("-----------------------------------------------------------------------------\n");
 }
 
 std::vector<std::string> pp::Problem_59::m_generate_keys() const {
@@ -44,7 +44,7 @@ std::vector<std::string> pp::Problem_59::m_generate_keys() const {
                 std::string key;
                 key.push_back(a);
                 key.push_back(b);
-                key.push_back(c);                
+                key.push_back(c);
                 keys.push_back(key);
             }
         }

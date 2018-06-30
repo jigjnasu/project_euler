@@ -1,4 +1,4 @@
-#include "Problem_60.h"
+#include "problem_60.h"
 #include <cstdio>
 #include <cmath>
 #include <string>

@@ -1,4 +1,4 @@
-#include "Problem_5.h"
+#include "problem_5.h"
 #include <cstdio>
 
 namespace pp = project_euler::problems;
@@ -22,7 +22,7 @@ void pp::Problem_5::smallest_multiple(int max_divisibles) const {
             printf("Smallest number === [%d]\n", number);
             return;
         }
-        
+
         ++number;
     }
 }

@@ -1,4 +1,4 @@
-#include "Problem_69.h"
+#include "problem_69.h"
 #include <vector>
 #include <cstdio>
 
@@ -30,7 +30,7 @@ void pp::Problem_69::totient_maximum(int n) const {
             index = i;
         }
     }
-    
+
     printf("Maximum totient from 2 .......... 1000000\n");
     printf("N == [%d] || phi[n] == [%.0f] || n / phi(n) == [%.8f]\n", index, phi[index], max);
 }

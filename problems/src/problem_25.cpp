@@ -1,6 +1,6 @@
-#include "Problem_25.h"
-#include "Maths.h"
-#include "Integer.h"
+#include "problem_25.h"
+#include "maths.h"
+#include "integer.h"
 #include <cstdio>
 
 namespace pp = project_euler::problems;

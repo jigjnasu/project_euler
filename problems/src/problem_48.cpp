@@ -4,9 +4,9 @@
   Date : May 13th, 2016
 */
 
-#include "Problem_48.h"
-#include "Integer.h"
-#include "Maths.h"
+#include "problem_48.h"
+#include "integer.h"
+#include "maths.h"
 #include <cstdio>
 
 namespace pp = project_euler::problems;

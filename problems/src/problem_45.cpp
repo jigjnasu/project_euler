@@ -4,7 +4,7 @@
   Date : May 14th, 2016
 */
 
-#include "Problem_45.h"
+#include "problem_45.h"
 #include <cstdio>
 #include <cmath>
 
@@ -28,7 +28,7 @@ void pp::Problem_45::next_number() const {
             if (counter == 2)
                 break;
         }
-    }    
+    }
 }
 
 bool pp::Problem_45::m_is_pentagonal(const double& n) const {
@@ -36,9 +36,9 @@ bool pp::Problem_45::m_is_pentagonal(const double& n) const {
     if (index - static_cast<int>(index) == 0.0)
         return true;
 
-    return false;    
+    return false;
 }
 
 double pp::Problem_45::m_hexagonal(const double& n) const {
-    return (2 * n * n) - n;    
+    return (2 * n * n) - n;
 }

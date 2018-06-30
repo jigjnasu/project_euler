@@ -4,7 +4,7 @@
   Date : May 18th, 2016
 */
 
-#include "Problem_32.h"
+#include "problem_32.h"
 #include <cstdio>
 #include <set>
 
@@ -27,7 +27,7 @@ void pp::Problem_32::pandigital_product() const {
     for (std::set<int>::const_iterator it = products.begin(); it != products.end(); ++it)
         product_sum += *it;
 
-    printf("Product sum of all pandigital numbers == [%d]\n", product_sum);    
+    printf("Product sum of all pandigital numbers == [%d]\n", product_sum);
 }
 
 bool pp::Problem_32::m_is_pandigital(int a, int b, int c) const {
@@ -57,7 +57,7 @@ bool pp::Problem_32::m_is_pandigital(int a, int b, int c) const {
             return false;
         else
             array[value - 1] = 1;
-        c /= 10;		
+        c /= 10;
     }
 
     for (int i = 0; i < 9; ++i)

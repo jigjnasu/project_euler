@@ -1,4 +1,4 @@
-#include "Problem_18.h"
+#include "problem_18.h"
 #include <cstdio>
 #include <vector>
 
@@ -22,7 +22,7 @@ void project_euler::problems::Problem_18::max_path() const {
                                               { 91, 71, 52, 38, 17, 14, 91, 43, 58, 50, 27, 29, 48 },
                                               { 63, 66, 04, 68, 89, 53, 67, 30, 73, 16, 69, 87, 40, 31 },
                                               {  4, 62, 98, 27, 23,  9, 70, 98, 73, 93, 38, 53, 60,  4, 23 } };
-    
+
     std::size_t c_size = pyramid[pyramid.size() - 1].size() - 1;
     for (int r = pyramid.size() - 2; r >= 0; --r, --c_size)
         for (std::size_t c = 0; c < c_size; ++c)
@@ -30,7 +30,7 @@ void project_euler::problems::Problem_18::max_path() const {
 
     printf("--------------------------------------------------\n");
     printf("Maximum sum while running down the pyramid == [%d]\n", pyramid[0][0]);
-    printf("--------------------------------------------------\n");    
+    printf("--------------------------------------------------\n");
 }
 
 int project_euler::problems::Problem_18::m_max(int a, int b) const {

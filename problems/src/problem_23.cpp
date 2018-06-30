@@ -1,4 +1,4 @@
-#include "Problem_23.h"
+#include "problem_23.h"
 #include <cstdio>
 
 const int MAX = 28123;
@@ -12,7 +12,7 @@ pp::Problem_23::~Problem_23() {}
 void pp::Problem_23::non_abundant_sums() const {
     std::vector<int> all = m_positive_numbers();
     std::vector<int> abundants = m_abundant_numbers();
-	
+
     for (std::size_t i = 0; i < abundants.size(); ++i) {
         for (std::size_t j = i; j < abundants.size(); ++j) {
             const int index = abundants[i] + abundants[j];
@@ -25,7 +25,7 @@ void pp::Problem_23::non_abundant_sums() const {
     for (std::size_t i = 0; i < all.size(); ++i)
         sum += all[i];
 
-    printf("Sum of all positive integers which cannot be written as sum of two abundant numbers == [%d]\n", sum);    
+    printf("Sum of all positive integers which cannot be written as sum of two abundant numbers == [%d]\n", sum);
 }
 
 std::vector<int> pp::Problem_23::m_abundant_numbers() const {
@@ -48,5 +48,5 @@ int pp::Problem_23::m_sum_of_divisors(int n) const {
     for (int i = 1; i <= n / 2; ++i)
         if (n % i == 0)
             sum += i;
-    return sum;    
+    return sum;
 }

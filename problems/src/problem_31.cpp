@@ -1,4 +1,4 @@
-#include "Problem_31.h"
+#include "problem_31.h"
 #include <cstdio>
 #include <ctime>
 
@@ -15,7 +15,7 @@ void project_euler::problems::Problem_31::coin_sums() const {
     printf("Execution time == [%.8f] seconds\n",
            (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
     printf("--------------------------------------------------\n");
-    
+
     printf("----------------- Recursive Algorithm ------------\n");
     start = clock();
     printf("Coin Sums == [%d]\n", m_coin_sums_recursive(amount, coins.size() - 1));
@@ -34,15 +34,15 @@ void project_euler::problems::Problem_31::coin_sums() const {
     }
     printf("Coin Sums == [%d]\n", m_coin_sums_dp(amount, coins.size() - 1, memo));
     printf("Execution time == [%.8f] seconds\n",
-           (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));    
+           (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
     printf("--------------------------------------------------\n");
 
     printf("-------------- DP Bottom UP Algorithm ------------\n");
     start = clock();
     printf("Coin Sums == [%d]\n", m_coin_sums_dp_bottom_up(amount));
     printf("Execution time == [%.8f] seconds\n",
-           (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));    
-    printf("--------------------------------------------------\n");    
+           (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("--------------------------------------------------\n");
 }
 
 int project_euler::problems::Problem_31::m_coin_sums_iterative(int amount) const {

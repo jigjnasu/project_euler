@@ -1,6 +1,6 @@
-#include "Problem_42.h"
-#include "BinarySearch.h"
-#include "String.h"
+#include "problem_42.h"
+#include "binary_search.h"
+#include "string.h"
 #include <cstdio>
 #include <fstream>
 
@@ -15,7 +15,7 @@ void pp::Problem_42::count_coded_triangle_numbers(const std::string& file) const
     utility::algorithms::search::BinarySearch<int> search;
     utility::string::String<int> string;
     std::vector<int> coded_triangle_numbers = m_coded_triangle_numbers();
-    
+
     std::ifstream ifs(file.c_str());
     if (ifs.is_open()) {
         std::string line;
@@ -24,7 +24,7 @@ void pp::Problem_42::count_coded_triangle_numbers(const std::string& file) const
         std::size_t pos = line.find(",");
         if (search.search(coded_triangle_numbers, string.sum_of_char_value(line.substr(1, pos - 2))))
             ++counter;
-		
+
         while (pos != std::string::npos) {
             std::size_t next_pos = line.find(",", pos + 1);
             if (next_pos == std::string::npos) {

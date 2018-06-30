@@ -4,8 +4,8 @@
   Date: Dec 6th, 2016
  */
 
-#include "Problem_187.h"
-#include "Maths.h"
+#include "problem_187.h"
+#include "maths.h"
 #include <cstdio>
 
 namespace pp = project_euler::problems;
@@ -20,7 +20,7 @@ int pp::Problem_187::semi_primes(std::size_t n) const {
 
     int semi_prime_counter = m_square_factors(n, prime_numbers);
     semi_prime_counter += m_2_factors(n, prime_numbers);
-    
+
     return semi_prime_counter;
 }
 
@@ -28,7 +28,7 @@ int pp::Problem_187::m_square_factors(std::size_t n, const std::vector<std::size
     int factors = 0;
     for (std::size_t i = 0; (prime_numbers[i] * prime_numbers[i]) <= n; ++i)
         ++factors;
-    
+
     return factors;
 }
 

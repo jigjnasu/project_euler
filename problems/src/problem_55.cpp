@@ -4,9 +4,9 @@
   Date : June 2nd, 2016
 */
 
-#include "Problem_55.h"
-#include "Integer.h"
-#include "Common.h"
+#include "problem_55.h"
+#include "integer.h"
+#include "common.h"
 #include <cstdio>
 
 namespace pp = project_euler::problems;
@@ -34,5 +34,5 @@ bool pp::Problem_55::m_is_lychrel_number(int n) const {
 	    return false;
     }
 
-    return true;    
+    return true;
 }

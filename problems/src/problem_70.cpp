@@ -12,8 +12,8 @@
   4.. Save the min value
  */
 
-#include "Problem_70.h"
-#include "Maths.h"
+#include "problem_70.h"
+#include "maths.h"
 #include <vector>
 #include <cstdio>
 
@@ -44,7 +44,7 @@ void pp::Problem_70::totient_permutation() const {
     printf("-------------------------------------------------\n");
     printf("n == [%ld] || phi[%ld] == [%ld] || ratio == [%.8f]\n",
            n, n, phi[n], min);
-    printf("-------------------------------------------------\n");    
+    printf("-------------------------------------------------\n");
 }
 
 bool pp::Problem_70::m_is_permutation(std::size_t a, std::size_t b) const {

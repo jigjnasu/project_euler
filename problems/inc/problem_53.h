@@ -8,7 +8,7 @@
 #ifndef PROJECT_EULER_PROBLEMS_PROBLEM_53_H_
 #define PROJECT_EULER_PROBLEMS_PROBLEM_53_H_
 
-#include "Integer.h"
+#include "integer.h"
 
 namespace project_euler {
     namespace problems {

@@ -4,8 +4,8 @@
   Date : Sep 14th, 2016
 */
 
-#include "Problem_99.h"
-#include "Common.h"
+#include "problem_99.h"
+#include "common.h"
 #include <cmath>
 #include <cstdio>
 #include <fstream>
@@ -22,7 +22,7 @@ void pp::Problem_99::largest_number(const std::string& file) const {
     int line_number = 1;
     double max_number = 0;
     int max_line_number = 0;
-    
+
     if (ifs.is_open()) {
         std::string line;
         while (std::getline(ifs, line)) {

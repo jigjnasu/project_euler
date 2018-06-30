@@ -4,9 +4,9 @@
   Date : May 12th, 2016
 */
 
-#include "Problem_29.h"
-#include "Integer.h"
-#include "Maths.h"
+#include "problem_29.h"
+#include "integer.h"
+#include "maths.h"
 #include <cstdio>
 #include <set>
 #include <cmath>
@@ -23,6 +23,6 @@ void pp::Problem_29::distinct_powers() const {
     for (int a = 2; a <= 100; ++a)
 	for (int b = 2; b <= 100; ++b)
 	    distinct_numbers.insert(maths.power(a, b).get_reverse());
-    
-    printf("Distinct powers count == [%lu]\n", distinct_numbers.size());    
+
+    printf("Distinct powers count == [%lu]\n", distinct_numbers.size());
 }

@@ -4,10 +4,10 @@
   Date : May 25th, 2016
 */
 
-#include "Problem_56.h"
-#include "Integer.h"
-#include "Maths.h"
-#include "String.h"
+#include "problem_56.h"
+#include "integer.h"
+#include "maths.h"
+#include "string.h"
 #include <string>
 #include <cstdio>
 
@@ -20,10 +20,10 @@ pp::Problem_56::~Problem_56() {}
 void pp::Problem_56::powerful_digit_sum() const {
     int max_sum = 0;
     int i = 0;
-    int j = 0;    
+    int j = 0;
     utility::string::String<int> string;
     utility::maths::Maths<utility::integer::Integer> math;
-    
+
     for (int a = 2; a < 100; ++a) {
         for (int b = 2; b < 100; ++b) {
             const int sum = string.sum_of_digits(math.power(a, b).get_reverse());

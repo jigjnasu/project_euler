@@ -1,5 +1,5 @@
-#include "Problem_58.h"
-#include "Maths.h"
+#include "problem_58.h"
+#include "maths.h"
 #include <cstdio>
 #include <cmath>
 
@@ -19,12 +19,12 @@ void project_euler::problems::Problem_58::spiral_primes() const {
             if (maths.is_prime(diagnol))
                 ++count;
         }
-    
+
         total += 4;
         if ((count / static_cast<double>(total)) < 0.1f) {
             printf("---------------------------------------------------------\n");
             printf("Spiral primes ration less than 10 percent is at length == [%.0f]\n", std::sqrt(diagnol));
-            printf("---------------------------------------------------------\n");        
+            printf("---------------------------------------------------------\n");
             break;
         }
         ++i;

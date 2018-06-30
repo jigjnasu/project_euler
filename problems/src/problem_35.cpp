@@ -1,6 +1,6 @@
-#include "Problem_35.h"
-#include "Maths.h"
-#include "Common.h"
+#include "problem_35.h"
+#include "maths.h"
+#include "common.h"
 #include <cstdio>
 #include <cstdlib>
 
@@ -17,7 +17,7 @@ void pp::Problem_35::circular_primes() const {
         if (m_is_circular_prime(common.to_string(i)))
             ++counter;
 
-    printf("Circular primes under million == [%d]\n", counter);    
+    printf("Circular primes under million == [%d]\n", counter);
 }
 
 void pp::Problem_35::m_rotate_left(std::string& number) const {
@@ -34,5 +34,5 @@ bool pp::Problem_35::m_is_circular_prime(std::string number) const {
         m_rotate_left(number);
     }
 
-    return true;    
+    return true;
 }

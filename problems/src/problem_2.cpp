@@ -4,7 +4,7 @@
   Rakesh Kumar, cpp.rakesh(at)gmail.com
  */
 
-#include "Problem_2.h"
+#include "problem_2.h"
 
 namespace pp = project_euler::problems;
 

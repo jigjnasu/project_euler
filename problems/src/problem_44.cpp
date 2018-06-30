@@ -3,7 +3,7 @@
   Author : Rakesh Kumar @ cpp.rakesh@gmail.com
   Date : May 14th, 2016
 */
-#include "Problem_44.h"
+#include "problem_44.h"
 #include <cstdio>
 #include <cmath>
 
@@ -28,17 +28,17 @@ void pp::Problem_44::min_difference() const {
             }
         }
         ++p;
-    }    
+    }
 }
 
 int pp::Problem_44::m_pentagon_number(int n) const {
-    return (n * ((3 * n) - 1)) / 2;    
+    return (n * ((3 * n) - 1)) / 2;
 }
 
 bool pp::Problem_44::m_is_pentagon_number(int n) const {
     const float num = (1 + std::sqrt(24 * n + 1)) / 6;
     if (num - static_cast<int>(num) > 0.0)
         return false;
-	
-    return true;    
+
+    return true;
 }

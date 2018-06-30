@@ -8,16 +8,16 @@
 #ifndef PROJECT_EULER_PROBLEM_54_POKER_H_
 #define PROJECT_EULER_PROBLEM_54_POKER_H_
 
-#include "Card.h"
+#include "card.h"
 #include <vector>
 
 class Poker {
 public:
     Poker();
     ~Poker();
-	
+
     int Winner(const std::vector<Card>& A, const std::vector<Card>& B);
-	
+
 private:
     bool m_is_royal_flush(const std::vector<Card>& hands, int& max);
     bool m_is_straight_flush(const std::vector<Card>& hands, int& max);

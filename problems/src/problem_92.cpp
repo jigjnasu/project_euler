@@ -4,7 +4,7 @@
   Date : June 2nd, 2016
 */
 
-#include "Problem_92.h"
+#include "problem_92.h"
 #include <cstdio>
 
 namespace pp = project_euler::problems;
@@ -17,7 +17,7 @@ void pp::Problem_92::square_digit_chains() const {
     const int max = 10000000;
     const int size = 10000;
     int dictionary[size] = {0};
-	
+
     int counter = 0;
     for (int i = 1; i < max; ++i) {
         int number = i;
@@ -42,13 +42,13 @@ void pp::Problem_92::square_digit_chains() const {
                     dictionary[i] = 89;
                 ++counter;
                 break;
-            }							   
+            }
         }
     }
 
     printf("-----------------------------------------------------------------\n");
     printf("Number of Square Digit Chains ending at 89 == [%d]\n", counter);
-    printf("-----------------------------------------------------------------\n");    
+    printf("-----------------------------------------------------------------\n");
 }
 
 int pp::Problem_92::m_get_square_digit(int n) const {

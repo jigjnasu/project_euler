@@ -1,4 +1,4 @@
-#include "Problem_19.h"
+#include "problem_19.h"
 #include <cstdio>
 
 namespace pp = project_euler::problems;
@@ -18,7 +18,7 @@ void pp::Problem_19::sundays() const {
 
     while (day <= 31 && month <= 12 && year <= 2000) {
         day += 7;
-		
+
         int days_in_month = DAYS[month - 1];
         if (month == 2 && m_is_leap_year(year))
             ++days_in_month;
@@ -26,13 +26,13 @@ void pp::Problem_19::sundays() const {
         if (day > days_in_month) {
             day -= days_in_month;
             ++month;
-			
+
             if (month > 12) {
                 ++year;
                 month = 1;
             }
         }
-		
+
         if (day == 1 && year >= 1901)
             ++counter;
     }
@@ -44,5 +44,5 @@ bool pp::Problem_19::m_is_leap_year(int YYYY) const {
     if (YYYY % 4) return false;
     if (YYYY % 100 == 0 && YYYY % 400) return false;
 
-    return true;    
+    return true;
 }

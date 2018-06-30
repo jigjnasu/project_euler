@@ -1,4 +1,4 @@
-#include "Problem_9.h"
+#include "problem_9.h"
 #include <cstdio>
 
 namespace pp = project_euler::problems;
@@ -16,5 +16,5 @@ void pp::Problem_9::special_triplet() const {
                 return;
             }
         }
-    }    
+    }
 }

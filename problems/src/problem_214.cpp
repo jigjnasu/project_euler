@@ -1,5 +1,5 @@
-#include "Problem_214.h"
-#include "Maths.h"
+#include "problem_214.h"
+#include "maths.h"
 #include <cstdio>
 
 const std::size_t limit = 40000000;
@@ -22,7 +22,7 @@ void project_euler::problems::Problem_214::totient_chains() {
     for (std::size_t i = 2; i < limit; ++i) {
         if (m_chain_dictionary[i] == 0)
             m_chain_dictionary[i] = m_chain(i);
-        
+
         if (m_chain_dictionary[i] == length && maths.is_prime(i))
             sum += i;
     }
@@ -35,7 +35,7 @@ void project_euler::problems::Problem_214::totient_chains() {
 std::size_t project_euler::problems::Problem_214::m_chain(std::size_t n) {
     utility::maths::Maths<std::size_t> maths;
     int chain = 1;
-    
+
     while (n != 1) {
         if (m_chain_dictionary[n])
             return chain - 1 + m_chain_dictionary[n];

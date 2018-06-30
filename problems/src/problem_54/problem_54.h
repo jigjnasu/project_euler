@@ -1,7 +1,7 @@
 #ifndef PROJECT_EULER_PROBLEMS_PROBLEM_54_H_
 #define PROJECT_EULER_PROBLEMS_PROBLEM_54_H_
 
-#include "Card.h"
+#include "card.h"
 #include <string>
 #include <vector>
 

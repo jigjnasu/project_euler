@@ -1,4 +1,4 @@
-#include "Problem_17.h"
+#include "problem_17.h"
 #include <cstdio>
 
 namespace pp = project_euler::problems;
@@ -32,7 +32,7 @@ std::string pp::Problem_17::m_count(int n) const {
         word += DICTIONARY_C[(n / 10) - 2];
         n %= 10;
         if (n)
-            word += DICTIONARY_A[n - 1];		
+            word += DICTIONARY_A[n - 1];
     } else if (n >= 100 && n <= 999){
         word += DICTIONARY_A[(n / 100) - 1] + "hundred";
         n %= 100;

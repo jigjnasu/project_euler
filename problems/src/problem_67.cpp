@@ -1,4 +1,4 @@
-#include "Problem_67.h"
+#include "problem_67.h"
 #include <iostream>
 #include <sstream>
 #include <fstream>
@@ -13,11 +13,11 @@ void project_euler::problems::Problem_67::max_path() const {
     std::size_t c_size = pyramid[pyramid.size() - 1].size() - 1;
     for (int r = pyramid.size() - 2; r >= 0; --r, --c_size)
         for (std::size_t c = 0; c < c_size; ++c)
-            pyramid[r][c] += m_max(pyramid[r + 1][c], pyramid[r + 1][c + 1]); 
+            pyramid[r][c] += m_max(pyramid[r + 1][c], pyramid[r + 1][c + 1]);
 
     std::cout << "-----------------------------------------------------------" << std::endl;
     std::cout << "Running down the pyramid maximum path == " << pyramid[0][0]  << std::endl;
-    std::cout << "-----------------------------------------------------------" << std::endl;    
+    std::cout << "-----------------------------------------------------------" << std::endl;
 }
 
 std::vector<std::vector<int>>

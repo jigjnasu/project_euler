@@ -1,6 +1,6 @@
-#include "Problem_37.h"
-#include "Common.h"
-#include "Maths.h"
+#include "problem_37.h"
+#include "common.h"
+#include "maths.h"
 #include <cstdio>
 
 namespace pp = project_euler::problems;
@@ -22,7 +22,7 @@ void pp::Problem_37::truncatable_primes() const {
         ++iter;
     }
 
-    printf("Sum of 11 truncatable primes == [%d]\n", sum);    
+    printf("Sum of 11 truncatable primes == [%d]\n", sum);
 }
 
 bool pp::Problem_37::m_is_trunctable_prime(const std::string& number) const {
@@ -34,10 +34,10 @@ bool pp::Problem_37::m_is_trunctable_prime(const std::string& number) const {
     for (std::size_t i = 1; i < number.size(); ++i)
         if (!math.is_prime(common.to_number(number.substr(0, i).c_str())))
             return false;
-    
+
     for (std::size_t i = number.size() - 1; i >= 1; --i)
         if (!math.is_prime(common.to_number(number.substr(i, number.size() - i).c_str())))
             return false;
 
-    return true;    
+    return true;
 }

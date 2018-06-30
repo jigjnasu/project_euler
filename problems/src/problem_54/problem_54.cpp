@@ -4,11 +4,11 @@
   Date : June 25th, 2016
 */
 
-#include "Problem_54.h"
-#include "Poker.h"
+#include "problem_54.h"
+#include "poker.h"
 #include <fstream>
 
-// Constant values to hold 
+// Constant values to hold
 const std::string CARD_TYPE = "CDHS";
 const std::string CARD_VALUE = "23456789TJQKA";
 
@@ -23,7 +23,7 @@ void pp::Problem_54::count_player_wins(int player) const {
     int wins_count = 0;
     std::vector< std::vector<Card> > A;
     std::vector< std::vector<Card> > B;
-	
+
     if (m_read_data("../data/poker.txt", A, B)) {
         for (std::size_t i = 0; i < A.size(); ++i) {
             if (player == poker.Winner(A[i], B[i])) {
@@ -34,7 +34,7 @@ void pp::Problem_54::count_player_wins(int player) const {
 
     printf("-------------------------------------------------------------------------\n");
     printf("Player [%d] wins == [%d] mathces out of 1000\n", player, wins_count);
-    printf("-------------------------------------------------------------------------\n");    
+    printf("-------------------------------------------------------------------------\n");
 }
 
 bool pp::Problem_54::m_read_data(const std::string& file,
@@ -63,11 +63,11 @@ bool pp::Problem_54::m_read_data(const std::string& file,
             A.push_back(player1);
             B.push_back(player2);
         }
-			
+
     } else {
         printf("Error: There is an error while [%s] file\n", file.c_str());
         result = false;
     }
-	
+
     return result;
 }

@@ -1,5 +1,5 @@
-#include "Problem_7.h"
-#include "Maths.h"
+#include "problem_7.h"
+#include "maths.h"
 #include <cstdio>
 
 namespace pp = project_euler::problems;

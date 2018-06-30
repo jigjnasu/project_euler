@@ -5,8 +5,8 @@
   Jan 12th, 2017
  */
 
-#include "Problem_74.h"
-#include "Maths.h"
+#include "problem_74.h"
+#include "maths.h"
 #include <cstdio>
 
 #include <cstdio>
@@ -29,7 +29,7 @@ void pp::Problem_74::digit_factorial_chains() {
     int count = 0;
     for (int i = 1; i < limit; ++i) {
         const int chain = m_factorial_chain(i);
-        m_chain_dictionary[i] = chain; 
+        m_chain_dictionary[i] = chain;
         if (chain == 60)
             ++count;
     }
@@ -48,7 +48,7 @@ int pp::Problem_74::m_factorial_chain(int number) {
     std::map<int, int> chain;
     chain[number] = count;
     int next = m_sum(number);
-    
+
     while (!chain[next]) {
         if (m_chain_dictionary[next])
             return m_chain_dictionary[next] + chain.size() - 1;

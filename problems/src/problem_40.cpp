@@ -4,8 +4,8 @@
   Date : May 14th, 2016
 */
 
-#include "Problem_40.h"
-#include "Common.h"
+#include "problem_40.h"
+#include "common.h"
 #include <cstdio>
 #include <string>
 

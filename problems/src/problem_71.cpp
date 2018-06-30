@@ -4,8 +4,8 @@
   Date: Jan 9th, 2017
  */
 
-#include "Problem_71.h"
-#include "Maths.h"
+#include "problem_71.h"
+#include "maths.h"
 #include <cmath>
 #include <cstdio>
 
