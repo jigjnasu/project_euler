@@ -34,5 +34,5 @@ bool pp::Problem_55::m_is_lychrel_number(int n) const {
 	    return false;
     }
 
-    return true;    
+    return true;
 }
