@@ -6,8 +6,8 @@
   Date: Dec 17th, 2016
  */
 
-#include "TestSuite.h"
-#include "AllProblemHeaders.h"
+#include "test_suite.h"
+#include "all_problem_headers.h"
 #include <cstdio>
 
 const int min = 1;

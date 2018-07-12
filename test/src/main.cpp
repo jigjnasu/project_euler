@@ -1,4 +1,4 @@
-#include "TestSuite.h"
+#include "test_suite.h"
 
 void run_a_test_case(int test_case) {
     project_euler::test::TestSuite suite;
