@@ -22,7 +22,7 @@ void pp::Problem_45::next_number() const {
 
         if (m_is_pentagonal(number)) {
             printf("------------------------------------------------------------------\n");
-            printf("Triangle, Pentagonal and Hexagonal Number == [%10.8lf]\n", number);
+            printf("Triangle, Pentagonal and Hexagonal Number == [%10.0lf]\n", number);
             printf("-----------------------------------------------------------------\n");
             ++counter;
             if (counter == 2)
@@ -33,7 +33,7 @@ void pp::Problem_45::next_number() const {
 
 bool pp::Problem_45::m_is_pentagonal(const double& n) const {
     const double index = (1 + std::sqrt(24 * n + 1)) / 6;
-    if (index - static_cast<int>(index) == 0.0)
+    if (index - static_cast<int>(index) == 0.0f)
         return true;
 
     return false;
