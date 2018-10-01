@@ -5,7 +5,7 @@
  */
 
 #include <cstdio>
-#include <ctime>
+#include <chrono>
 #include <cmath>
 
 bool is_prime(int n) {
@@ -28,9 +28,11 @@ int maximum_factor(int n) {
 }
 
 int main() {
-    std::clock_t start = clock();
+    using clock = std::chrono::steady_clock;
+    clock::time_point start = clock::now();
     const int n = 1000000;
     printf("Maximum factor between 2 ..... %d == [%d]\n", n, maximum_factor(n));
-    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("Execution time == [%16lf] seconds\n",
+           std::chrono::duration<double>(clock::now() - start).count());
     return 0;
 }
