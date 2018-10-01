@@ -127,13 +127,13 @@ void pt::TestSuite::m_execute(ptrFunc function) {
 }
 
 void pt::TestSuite::m_start_timer() {
-    m_start_time = clock();
+    m_start_time = std::chrono::steady_clock::now();
 }
 
 void pt::TestSuite::m_end_timer() const {
     printf("----------------------------------------------------------------------------\n");
-    printf("Execution time == [%.8f] seconds\n",
-           (clock() - m_start_time) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("Execution time == [%16lf] seconds\n",
+           std::chrono::duration<double>(std::chrono::steady_clock::now() - m_start_time).count());
     printf("----------------------------------------------------------------------------\n");
 }
 

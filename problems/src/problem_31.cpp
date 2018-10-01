@@ -1,6 +1,6 @@
 #include "problem_31.h"
 #include <cstdio>
-#include <ctime>
+#include <chrono>
 
 const std::vector<int> coins = {1, 2, 5, 10, 20, 50, 100, 200};
 
@@ -10,21 +10,22 @@ project_euler::problems::Problem_31::~Problem_31() {}
 
 void project_euler::problems::Problem_31::coin_sums() const {
     int amount = 200;
-    std::clock_t start = clock();
+    using clock = std::chrono::steady_clock;
+    clock::time_point start = clock::now();
     printf("Coin Sums == [%d]\n", m_coin_sums_iterative(amount));
-    printf("Execution time == [%.8f] seconds\n",
-           (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("Execution time == [%16lf] seconds\n",
+           std::chrono::duration<double>(clock::now() - start).count());
     printf("--------------------------------------------------\n");
 
     printf("----------------- Recursive Algorithm ------------\n");
-    start = clock();
+    start = clock::now();
     printf("Coin Sums == [%d]\n", m_coin_sums_recursive(amount, coins.size() - 1));
-    printf("Execution time == [%.8f] seconds\n",
-           (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("Execution time == [%16lf] seconds\n",
+           std::chrono::duration<double>(clock::now() - start).count());
     printf("--------------------------------------------------\n");
 
     printf("----------------- DP Algorithm -------------------\n");
-    start = clock();
+    start = clock::now();
     std::vector< std::vector<int> > memo;
     for (int i = 0; i <= amount; ++i) {
         std::vector<int> m;
@@ -33,15 +34,15 @@ void project_euler::problems::Problem_31::coin_sums() const {
         memo.push_back(m);
     }
     printf("Coin Sums == [%d]\n", m_coin_sums_dp(amount, coins.size() - 1, memo));
-    printf("Execution time == [%.8f] seconds\n",
-           (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("Execution time == [%16lf] seconds\n",
+           std::chrono::duration<double>(clock::now() - start).count());
     printf("--------------------------------------------------\n");
 
     printf("-------------- DP Bottom UP Algorithm ------------\n");
-    start = clock();
+    start = clock::now();
     printf("Coin Sums == [%d]\n", m_coin_sums_dp_bottom_up(amount));
-    printf("Execution time == [%.8f] seconds\n",
-           (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("Execution time == [%16lf] seconds\n",
+           std::chrono::duration<double>(clock::now() - start).count());
     printf("--------------------------------------------------\n");
 }
 

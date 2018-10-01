@@ -10,7 +10,7 @@
 #define PROJECT_EULER_TEST_TESTSUITE_H_
 
 #include <map>
-#include <ctime>
+#include <chrono>
 
 namespace project_euler {
     namespace test {
@@ -24,7 +24,7 @@ namespace project_euler {
 
             typedef void (TestSuite::*ptrFunc)();
         private:
-            std::clock_t m_start_time;
+            std::chrono::steady_clock::time_point m_start_time;
             int m_test_case;
             std::map<int, ptrFunc> m_test_cases_dictionary;
 
