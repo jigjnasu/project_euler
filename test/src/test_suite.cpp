@@ -919,7 +919,7 @@ void pt::TestSuite::m_test_case_for_problem_206() {
 
     m_test_case_banner();
     pp::Problem_206 problem;
-    problem.solve();
+    problem.concealed_square();
 
     m_end_timer();
 }
