@@ -78,6 +78,7 @@
 #include "problem_125.h"
 #include "problem_145.h"
 #include "problem_187.h"
+#include "problem_206.h"
 #include "problem_214.h"
 #include "problem_297.h"
 
