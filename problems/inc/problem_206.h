@@ -8,7 +8,7 @@ namespace project_euler {
             Problem_206();
             ~Problem_206();
 
-            void solve() const;
+            void concealed_square() const;
         };
     };
 };

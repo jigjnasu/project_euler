@@ -13,6 +13,6 @@ pp::Problem_206::Problem_206() {}
 
 pp::Problem_206::~Problem_206() {}
 
-void pp::Problem_206::solve() const {
+void pp::Problem_206::concealed_square() const {
     printf("solve problem here\n");
 }
