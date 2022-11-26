@@ -72,6 +72,7 @@
 #include "problem_74.h"
 #include "problem_76.h"
 #include "problem_80.h"
+#include "problem_89.h"
 #include "problem_92.h"
 #include "problem_97.h"
 #include "problem_99.h"
