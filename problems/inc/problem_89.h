@@ -14,6 +14,7 @@ namespace project_euler {
 
         private:
             std::string roman(int n) const;
+            int decimal(const std::string& n) const;
             int random(int min, int max) const;
         };
     };
